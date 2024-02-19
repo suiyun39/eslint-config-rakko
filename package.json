@@ -1,0 +1,31 @@
+{
+  "name": "eslint-config-rakko",
+  "version": "0.0.0",
+  "description": "自用 ESLint 规则集",
+  "repository": "github:suiyun39/eslint-config-rakko",
+  "license": "MIT",
+  "keywords": [
+    "eslint",
+    "eslint-config"
+  ],
+  "type": "module",
+  "packageManager": "pnpm@8.15.3",
+  "scripts": {},
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3"
+  },
+  "peerDependencies": {
+    "eslint": "^8.56.0"
+  }
+}
