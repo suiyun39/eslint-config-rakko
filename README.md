@@ -26,5 +26,6 @@ todo...
 ## 参考与感谢
 
 - [@antfu/eslint-config](https://github.com/antfu/eslint-config)
+- [@sxzz/eslint-config](https://github.com/sxzz/eslint-config)
 - [eslint-config-standard](https://github.com/standard/eslint-config-standard)
 - [eslint-config-alloy](https://github.com/AlloyTeam/eslint-config-alloy)
