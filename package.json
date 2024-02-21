@@ -22,10 +22,14 @@
     "dist"
   ],
   "devDependencies": {
+    "@types/eslint": "^8.56.2",
     "eslint": "^8.56.0",
     "typescript": "^5.3.3"
   },
   "peerDependencies": {
     "eslint": "^8.56.0"
+  },
+  "dependencies": {
+    "globals": "^14.0.0"
   }
 }
