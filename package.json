@@ -11,7 +11,8 @@
   "type": "module",
   "packageManager": "pnpm@8.15.3",
   "scripts": {
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "prepare": "husky"
   },
   "exports": {
     ".": {
@@ -26,6 +27,8 @@
   "devDependencies": {
     "@types/eslint": "^8.56.2",
     "eslint": "^8.56.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
     "sucrase": "^3.35.0",
     "typescript": "^5.3.3"
   },
@@ -34,5 +37,8 @@
   },
   "dependencies": {
     "globals": "^14.0.0"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
   }
 }
