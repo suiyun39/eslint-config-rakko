@@ -5,4 +5,6 @@ require('sucrase/register/ts')
 
 const { defineConfig } = require('./src/index.ts')
 
-export default defineConfig({})
+export default defineConfig({
+  typescript: true,
+})
