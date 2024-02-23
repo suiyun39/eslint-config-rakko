@@ -224,7 +224,7 @@ export function javascript(): Linter.FlatConfig {
       'require-await': 'warn',
       'require-unicode-regexp': 'warn',
       'require-yield': 'error',
-      'sort-imports': 'warn',
+      'sort-imports': 'off',
       'sort-keys': 'off',
       'sort-vars': 'off',
       'spaced-comment': ['warn', 'always'],
