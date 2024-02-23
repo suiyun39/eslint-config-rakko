@@ -1,9 +1,13 @@
+import process from 'node:process'
 import type { Linter, ESLint } from 'eslint'
 import { parser as tsParser, plugin as tsPlugin } from 'typescript-eslint'
 
-export function typescript(): Linter.FlatConfig {
+export interface TypescriptOptions {
+  project: boolean | string | string[]
+}
+
+export function typescript(options: TypescriptOptions): Linter.FlatConfig {
   // 这些规则需要类型信息才能运行, 因此仅在配置了 project 选项时才加入规则集
-  // eslint-disable-next-line
   const typeAwareRules: Linter.FlatConfig['rules'] = {
     '@typescript-eslint/await-thenable': 'error',
     '@typescript-eslint/consistent-type-exports': ['warn', { fixMixedExportsWithInlineTypeSpecifier: true }],
@@ -63,6 +67,8 @@ export function typescript(): Linter.FlatConfig {
       parser: tsParser as Linter.ParserModule,
       parserOptions: {
         sourceType: 'module',
+        project: options.project,
+        tsconfigRootDir: process.cwd(),
       },
     },
     plugins: {
@@ -171,6 +177,9 @@ export function typescript(): Linter.FlatConfig {
       '@typescript-eslint/triple-slash-reference': 'error',
       '@typescript-eslint/typedef': 'off',
       '@typescript-eslint/unified-signatures': 'warn',
+
+      // -------- 需要类型信息的规则 --------
+      ...options.project ? typeAwareRules : {},
     },
   }
 }
