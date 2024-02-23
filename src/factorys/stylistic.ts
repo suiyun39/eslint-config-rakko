@@ -89,7 +89,11 @@ export function stylistic(): Linter.FlatConfig {
       '@stylistic/semi-spacing': 'error',
       '@stylistic/semi-style': ['error', 'last'],
       '@stylistic/space-before-blocks': 'error',
-      '@stylistic/space-before-function-paren': 'error',
+      '@stylistic/space-before-function-paren': ['error', {
+        anonymous: 'always',
+        named: 'never',
+        asyncArrow: 'always'
+      }],
       '@stylistic/space-in-parens': 'error',
       '@stylistic/space-infix-ops': 'error',
       '@stylistic/space-unary-ops': 'error',
