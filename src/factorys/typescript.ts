@@ -167,7 +167,7 @@ export function typescript(): Linter.FlatConfig {
       '@typescript-eslint/prefer-literal-enum-member': 'warn',
       '@typescript-eslint/prefer-namespace-keyword': 'warn',
       '@typescript-eslint/prefer-ts-expect-error': 'warn',
-      '@typescript-eslint/sort-type-constituents': 'warn',
+      '@typescript-eslint/sort-type-constituents': 'off',
       '@typescript-eslint/triple-slash-reference': 'error',
       '@typescript-eslint/typedef': 'off',
       '@typescript-eslint/unified-signatures': 'warn',
