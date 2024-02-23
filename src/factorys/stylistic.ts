@@ -59,7 +59,11 @@ export function stylistic(): Linter.FlatConfig {
       '@stylistic/lines-between-class-members': 'error',
       '@stylistic/max-len': 'off',
       '@stylistic/max-statements-per-line': 'error',
-      '@stylistic/member-delimiter-style': 'error',
+      '@stylistic/member-delimiter-style': ['error', {
+        multiline: { delimiter: 'none', requireLast: false },
+        singleline: { delimiter: 'semi', requireLast: false },
+        multilineDetection: 'brackets',
+      }],
       '@stylistic/multiline-ternary': ['error', 'always-multiline'],
       '@stylistic/new-parens': 'error',
       '@stylistic/newline-per-chained-call': ['error', { ignoreChainWithDepth: 6 }],
