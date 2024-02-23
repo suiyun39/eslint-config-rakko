@@ -1,7 +1,7 @@
 import type { Linter } from 'eslint'
 
 export interface IgnoresConfig {
-  ignores: NonNullable<Linter.FlatConfig['ignores']>
+  ignores: NonNullable<Linter.FlatConfig['ignores']>;
 }
 
 /**

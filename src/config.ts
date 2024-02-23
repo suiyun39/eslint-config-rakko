@@ -2,8 +2,8 @@ import type { Linter } from 'eslint'
 
 import { ignores } from './factorys/ignores'
 import { javascript } from './factorys/javascript'
-import { stylistic } from "./factorys/stylistic";
-import { typescript } from "./factorys/typescript";
+import { stylistic } from './factorys/stylistic'
+import { typescript } from './factorys/typescript'
 
 export interface UserConfig {
   ignores?: Linter.FlatConfig['ignores'];

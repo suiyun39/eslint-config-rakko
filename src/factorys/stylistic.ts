@@ -92,7 +92,7 @@ export function stylistic(): Linter.FlatConfig {
       '@stylistic/space-before-function-paren': ['error', {
         anonymous: 'always',
         named: 'never',
-        asyncArrow: 'always'
+        asyncArrow: 'always',
       }],
       '@stylistic/space-in-parens': 'error',
       '@stylistic/space-infix-ops': 'error',

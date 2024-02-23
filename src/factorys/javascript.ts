@@ -1,5 +1,5 @@
 import type { Linter } from 'eslint'
-import globals from "globals";
+import globals from 'globals'
 
 /**
  * 此处包含了 javascript 相关规则
@@ -11,8 +11,8 @@ export function javascript(): Linter.FlatConfig {
       reportUnusedDisableDirectives: true,
     },
     languageOptions: {
-      ecmaVersion: "latest",
-      sourceType: "module",
+      ecmaVersion: 'latest',
+      sourceType: 'module',
       parserOptions: {
         ecmaVersion: 'latest',
         sourceType: 'module',
@@ -165,7 +165,7 @@ export function javascript(): Linter.FlatConfig {
       'no-new-object': 'warn',
       'no-new-wrappers': 'warn',
       'no-nonoctal-decimal-escape': 'error',
-      'no-octal': "error",
+      'no-octal': 'error',
       'no-octal-escape': 'warn',
       'no-param-reassign': 'warn',
       'no-plusplus': ['warn', { allowForLoopAfterthoughts: true }],
@@ -231,7 +231,7 @@ export function javascript(): Linter.FlatConfig {
       'strict': 'off',
       'symbol-description': 'warn',
       'vars-on-top': 'warn',
-      'yoda': ['warn', 'never']
+      'yoda': ['warn', 'never'],
     },
   }
 }
