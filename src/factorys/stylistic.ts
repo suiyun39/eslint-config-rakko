@@ -57,7 +57,7 @@ export function stylistic(): Linter.FlatConfig {
       '@stylistic/linebreak-style': ['error', 'unix'],
       '@stylistic/lines-around-comment': 'error',
       '@stylistic/lines-between-class-members': 'error',
-      '@stylistic/max-len': ['error', { code: 120, tabWidth: 2 }],
+      '@stylistic/max-len': 'off',
       '@stylistic/max-statements-per-line': 'error',
       '@stylistic/member-delimiter-style': 'error',
       '@stylistic/multiline-ternary': ['error', 'always-multiline'],
