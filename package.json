@@ -39,7 +39,8 @@
   },
   "dependencies": {
     "@stylistic/eslint-plugin": "^1.6.2",
-    "globals": "^14.0.0"
+    "globals": "^14.0.0",
+    "typescript-eslint": "^7.0.2"
   },
   "lint-staged": {
     "*": "eslint --fix"
