@@ -56,7 +56,7 @@ export function typescript(options: TypescriptOptions): Linter.FlatConfig {
     '@typescript-eslint/restrict-plus-operands': 'error',
     '@typescript-eslint/restrict-template-expressions': 'error',
     '@typescript-eslint/return-await': 'warn',
-    '@typescript-eslint/strict-boolean-expressions': 'warn',
+    '@typescript-eslint/strict-boolean-expressions': 'off',
     '@typescript-eslint/switch-exhaustiveness-check': 'warn',
     '@typescript-eslint/unbound-method': 'error',
   }
