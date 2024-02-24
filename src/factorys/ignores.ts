@@ -1,13 +1,13 @@
 import type { Linter } from 'eslint'
 
-export interface IgnoresConfig {
-  ignores: NonNullable<Linter.FlatConfig['ignores']>;
+export interface IgnoresOptions {
+  ignores: NonNullable<Linter.FlatConfig['ignores']>
 }
 
 /**
  * 全局文件忽略配置
  */
-export function ignores(config: IgnoresConfig): Linter.FlatConfig {
+export function ignores(options: IgnoresOptions): Linter.FlatConfig {
   return {
     ignores: [
       '**/node_modules',
@@ -21,7 +21,7 @@ export function ignores(config: IgnoresConfig): Linter.FlatConfig {
 
       '**/.idea',
 
-      ...config.ignores,
+      ...options.ignores,
     ],
   }
 }
