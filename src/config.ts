@@ -3,11 +3,11 @@ import type { Linter } from 'eslint'
 import { ignores } from './factorys/ignores'
 import { javascript } from './factorys/javascript'
 import { stylistic } from './factorys/stylistic'
-import { typescript } from './factorys/typescript'
+import { typescript, type TypescriptOptions } from './factorys/typescript'
 
 export interface UserConfig {
-  ignores?: Linter.FlatConfig['ignores'];
-  typescript?: boolean;
+  ignores?: Linter.FlatConfig['ignores']
+  typescript?: TypescriptOptions | boolean
 }
 
 export function defineConfig(config: UserConfig): Linter.FlatConfig[] {
@@ -19,7 +19,10 @@ export function defineConfig(config: UserConfig): Linter.FlatConfig[] {
   configs.push(stylistic())
 
   if (config.typescript) {
-    configs.push(typescript())
+    const defaultOptions: TypescriptOptions = { project: false }
+    const options = config.typescript === true ? defaultOptions : config.typescript
+
+    configs.push(typescript(options))
   }
 
   return configs
