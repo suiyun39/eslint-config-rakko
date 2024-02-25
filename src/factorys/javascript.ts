@@ -202,7 +202,7 @@ export function javascript(): Linter.FlatConfig {
       'no-void': 'warn',
       'no-warning-comments': 'off',
       'no-with': 'error',
-      'object-shorthand': ['warn', 'consistent-as-needed'],
+      'object-shorthand': 'off',
       'one-var': 'off',
       'one-var-declaration-per-line': 'warn',
       'operator-assignment': 'warn',
