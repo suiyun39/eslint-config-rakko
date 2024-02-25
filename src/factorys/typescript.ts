@@ -1,6 +1,6 @@
 import process from 'node:process'
 import type { Linter, ESLint } from 'eslint'
-import { parser as tsParser, plugin as tsPlugin } from 'typescript-eslint'
+import tsESLint from 'typescript-eslint'
 
 export interface TypescriptOptions {
   project: boolean | string | string[]
@@ -64,7 +64,7 @@ export function typescript(options: TypescriptOptions): Linter.FlatConfig {
   return {
     files: ['**/*.ts', '**/*.tsx'],
     languageOptions: {
-      parser: tsParser as Linter.ParserModule,
+      parser: tsESLint.parser as Linter.ParserModule,
       parserOptions: {
         sourceType: 'module',
         project: options.project,
@@ -72,7 +72,7 @@ export function typescript(options: TypescriptOptions): Linter.FlatConfig {
       },
     },
     plugins: {
-      '@typescript-eslint': tsPlugin as ESLint.Plugin,
+      '@typescript-eslint': tsESLint.plugin as ESLint.Plugin,
     },
     rules: {
       // -------- 与 TypeScript 冲突的规则 --------
