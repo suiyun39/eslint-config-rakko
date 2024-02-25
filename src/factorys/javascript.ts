@@ -184,7 +184,7 @@ export function javascript(): Linter.FlatConfig {
       'no-shadow-restricted-names': 'error',
       'no-ternary': 'off',
       'no-throw-literal': 'warn',
-      'no-undef-init': 'warn',
+      'no-undef-init': 'off',
       'no-undefined': 'off',
       'no-underscore-dangle': 'off',
       'no-unneeded-ternary': 'warn',
