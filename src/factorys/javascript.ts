@@ -227,7 +227,7 @@ export function javascript(): Linter.FlatConfig {
       'sort-imports': 'off',
       'sort-keys': 'off',
       'sort-vars': 'off',
-      'spaced-comment': ['warn', 'always'],
+      'spaced-comment': 'off',
       'strict': 'off',
       'symbol-description': 'warn',
       'vars-on-top': 'warn',
