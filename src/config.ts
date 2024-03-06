@@ -4,6 +4,7 @@ import { ignores } from './factorys/ignores'
 import { javascript } from './factorys/javascript'
 import { stylistic } from './factorys/stylistic'
 import { typescript, type TypescriptOptions } from './factorys/typescript'
+import { imports } from './factorys/imports'
 
 export interface UserConfig {
   ignores?: Linter.FlatConfig['ignores']
@@ -17,6 +18,7 @@ export function defineConfig(config: UserConfig): Linter.FlatConfig[] {
   configs.push(ignores({ ignores: config.ignores ?? [] }))
   configs.push(javascript())
   configs.push(stylistic())
+  configs.push(imports())
 
   if (config.typescript) {
     const defaultOptions: TypescriptOptions = { project: false }
