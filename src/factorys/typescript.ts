@@ -41,7 +41,7 @@ export function typescript(options: TypescriptOptions): Linter.FlatConfig {
     '@typescript-eslint/non-nullable-type-assertion-style': 'warn',
     '@typescript-eslint/prefer-find': 'warn',
     '@typescript-eslint/prefer-includes': 'warn',
-    '@typescript-eslint/prefer-nullish-coalescing': 'warn',
+    '@typescript-eslint/prefer-nullish-coalescing': ['warn', { ignoreConditionalTests: true }],
     '@typescript-eslint/prefer-optional-chain': 'warn',
     '@typescript-eslint/prefer-promise-reject-errors': 'warn',
     '@typescript-eslint/prefer-readonly': 'warn',
