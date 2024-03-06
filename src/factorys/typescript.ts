@@ -26,7 +26,7 @@ export function typescript(options: TypescriptOptions): Linter.FlatConfig {
     '@typescript-eslint/no-redundant-type-constituents': 'error',
     '@typescript-eslint/no-throw-literal': 'warn',
     '@typescript-eslint/no-unnecessary-boolean-literal-compare': 'warn',
-    '@typescript-eslint/no-unnecessary-condition': 'warn',
+    '@typescript-eslint/no-unnecessary-condition': ['warn', { allowConstantLoopConditions: true }],
     '@typescript-eslint/no-unnecessary-qualifier': 'warn',
     '@typescript-eslint/no-unnecessary-type-arguments': 'warn',
     '@typescript-eslint/no-unnecessary-type-assertion': 'error',
