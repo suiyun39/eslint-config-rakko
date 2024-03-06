@@ -87,7 +87,7 @@ export function javascript(): Linter.FlatConfig {
 
       // -------- Suggestions --------
       'accessor-pairs': 'warn',
-      'arrow-body-style': 'warn',
+      'arrow-body-style': 'off',
       'block-scoped-var': 'warn',
       'camelcase': 'off',
       'capitalized-comments': 'off',
