@@ -34,7 +34,11 @@ export function stylistic(): Linter.FlatConfig {
       '@stylistic/jsx-child-element-spacing': 'off',
       '@stylistic/jsx-closing-bracket-location': 'error',
       '@stylistic/jsx-closing-tag-location': 'error',
-      '@stylistic/jsx-curly-brace-presence': 'error',
+      '@stylistic/jsx-curly-brace-presence': ['error', {
+        props: 'never',
+        children: 'never',
+        propElementValues: 'always',
+      }],
       '@stylistic/jsx-curly-newline': 'error',
       '@stylistic/jsx-curly-spacing': 'error',
       '@stylistic/jsx-equals-spacing': 'error',
