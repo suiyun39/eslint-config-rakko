@@ -1,11 +1,13 @@
 import type { Linter } from 'eslint'
 import reactPlugin from 'eslint-plugin-react'
+import reactHooksPlugin from 'eslint-plugin-react-hooks'
 
 export function react(): Linter.FlatConfig {
   return {
     files: ['**/*.jsx', '**/*.tsx'],
     plugins: {
-      react: reactPlugin,
+      'react': reactPlugin,
+      'react-hooks': reactHooksPlugin,
     },
     settings: {
       react: { version: 'detect' },
@@ -120,6 +122,10 @@ export function react(): Linter.FlatConfig {
       'react/static-property-placement': 'off',
       'react/style-prop-object': 'warn',
       'react/void-dom-elements-no-children': 'warn',
+
+      // -------- React Hooks --------
+      'react-hooks/rules-of-hooks': 'error',
+      'react-hooks/exhaustive-deps': 'error',
     },
   }
 }

@@ -11,3 +11,10 @@ declare module 'eslint-plugin-react' {
   const reactPlugin: ESLint.Plugin
   export = reactPlugin
 }
+
+declare module 'eslint-plugin-react-hooks' {
+  import type { ESLint } from 'eslint'
+
+  const reactHooksPlugin: ESLint.Plugin
+  export = reactHooksPlugin
+}
