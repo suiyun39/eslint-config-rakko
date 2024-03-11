@@ -1,6 +1,8 @@
 import type { Linter } from 'eslint'
 import reactPlugin from 'eslint-plugin-react'
 import reactHooksPlugin from 'eslint-plugin-react-hooks'
+import reactRefreshPlugin from 'eslint-plugin-react-refresh'
+import jsxExpressionsPlugin from 'eslint-plugin-jsx-expressions'
 
 export function react(): Linter.FlatConfig {
   return {
@@ -8,6 +10,8 @@ export function react(): Linter.FlatConfig {
     plugins: {
       'react': reactPlugin,
       'react-hooks': reactHooksPlugin,
+      'react-refresh': reactRefreshPlugin,
+      'jsx-expressions': jsxExpressionsPlugin,
     },
     settings: {
       react: { version: 'detect' },
@@ -126,6 +130,12 @@ export function react(): Linter.FlatConfig {
       // -------- React Hooks --------
       'react-hooks/rules-of-hooks': 'error',
       'react-hooks/exhaustive-deps': 'error',
+
+      // -------- React Refresh --------
+      'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
+
+      // -------- JSX Expressions --------
+      'jsx-expressions/strict-logical-expressions': 'error',
     },
   }
 }

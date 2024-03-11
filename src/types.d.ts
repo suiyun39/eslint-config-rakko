@@ -18,3 +18,17 @@ declare module 'eslint-plugin-react-hooks' {
   const reactHooksPlugin: ESLint.Plugin
   export = reactHooksPlugin
 }
+
+declare module 'eslint-plugin-react-refresh' {
+  import type { ESLint } from 'eslint'
+
+  const reactRefreshPlugin: ESLint.Plugin
+  export = reactRefreshPlugin
+}
+
+declare module 'eslint-plugin-jsx-expressions' {
+  import type { ESLint } from 'eslint'
+
+  const jsxExpressionsPlugin: ESLint.Plugin
+  export = jsxExpressionsPlugin
+}
