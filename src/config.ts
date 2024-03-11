@@ -5,10 +5,12 @@ import { javascript } from './factorys/javascript'
 import { stylistic } from './factorys/stylistic'
 import { typescript, type TypescriptOptions } from './factorys/typescript'
 import { imports } from './factorys/imports'
+import { react } from './factorys/react'
 
 export interface UserConfig {
   ignores?: Linter.FlatConfig['ignores']
   typescript?: TypescriptOptions | boolean
+  react?: boolean
 }
 
 export function defineConfig(config: UserConfig): Linter.FlatConfig[] {
@@ -25,6 +27,10 @@ export function defineConfig(config: UserConfig): Linter.FlatConfig[] {
     const options = config.typescript === true ? defaultOptions : config.typescript
 
     configs.push(typescript(options))
+  }
+
+  if (config.react) {
+    configs.push(react())
   }
 
   return configs
