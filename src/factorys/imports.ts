@@ -18,7 +18,7 @@ export function imports(): Linter.FlatConfig {
       'import/export': 'error',
       'import/no-deprecated': 'off',
       'import/no-empty-named-blocks': 'warn',
-      'import/no-extraneous-dependencies': 'error',
+      'import/no-extraneous-dependencies': 'off',
       'import/no-mutable-exports': 'error',
       'import/no-named-as-default': 'warn',
       'import/no-named-as-default-member': 'warn',
