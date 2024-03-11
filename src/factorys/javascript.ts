@@ -219,7 +219,7 @@ export function javascript(): Linter.FlatConfig {
       'prefer-rest-params': 'warn',
       'prefer-spread': 'warn',
       'prefer-template': 'warn',
-      'quote-props': ['warn', 'consistent'],
+      'quote-props': 'off',
       'radix': 'warn',
       'require-await': 'warn',
       'require-unicode-regexp': 'warn',
