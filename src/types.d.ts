@@ -32,3 +32,10 @@ declare module 'eslint-plugin-jsx-expressions' {
   const jsxExpressionsPlugin: ESLint.Plugin
   export = jsxExpressionsPlugin
 }
+
+declare module 'eslint-plugin-solid' {
+  import type { ESLint } from 'eslint'
+
+  const solidPlugin: ESLint.Plugin
+  export = solidPlugin
+}

@@ -6,11 +6,13 @@ import { stylistic } from './factorys/stylistic'
 import { typescript, type TypescriptOptions } from './factorys/typescript'
 import { imports } from './factorys/imports'
 import { react } from './factorys/react'
+import { solid } from './factorys/solid'
 
 export interface UserConfig {
   ignores?: Linter.FlatConfig['ignores']
   typescript?: TypescriptOptions | boolean
   react?: boolean
+  solid?: boolean
 }
 
 export function defineConfig(config: UserConfig): Linter.FlatConfig[] {
@@ -31,6 +33,10 @@ export function defineConfig(config: UserConfig): Linter.FlatConfig[] {
 
   if (config.react) {
     configs.push(react())
+  }
+
+  if (config.solid) {
+    configs.push(solid())
   }
 
   return configs
