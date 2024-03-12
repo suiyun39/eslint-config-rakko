@@ -4,9 +4,9 @@ import * as importPlugin from 'eslint-plugin-i'
 /**
  * import 规则
  *
- * 当前版本中 import/no-deprecated 和 import/namespace 规则无法在 ESLint flat config 中使用
- * 详见: https://github.com/import-js/eslint-plugin-import/issues/2556
- * todo: 如果这个问题在未来的版本中得到解决，则考虑开启这两条规则
+ * todo: 在当前版本中, 部分规则无法在 flat config 中使用, 详见: https://github.com/import-js/eslint-plugin-import/issues/2556
+ * 因此被关闭的规则有: import/no-deprecated, import/namespace, import/no-named-as-default,
+ * import/no-named-as-default-member, import/default
  */
 export function imports(): Linter.FlatConfig {
   return {
@@ -20,8 +20,8 @@ export function imports(): Linter.FlatConfig {
       'import/no-empty-named-blocks': 'warn',
       'import/no-extraneous-dependencies': 'off',
       'import/no-mutable-exports': 'error',
-      'import/no-named-as-default': 'warn',
-      'import/no-named-as-default-member': 'warn',
+      'import/no-named-as-default': 'off',
+      'import/no-named-as-default-member': 'off',
       'import/no-unused-modules': 'off',
 
       // -------- Module systems --------
@@ -32,7 +32,7 @@ export function imports(): Linter.FlatConfig {
       'import/unambiguous': 'off',
 
       // -------- Static analysis --------
-      'import/default': 'error',
+      'import/default': 'off',
       'import/named': 'error',
       'import/namespace': 'off',
       'import/no-absolute-path': 'warn',
