@@ -1,0 +1,50 @@
+import type { Linter } from 'eslint'
+import nodePlugin from 'eslint-plugin-n'
+
+export function node(): Linter.FlatConfig {
+  return {
+    plugins: {
+      n: nodePlugin,
+    },
+    rules: {
+      'n/callback-return': 'off',
+      'n/exports-style': ['warn', 'module.exports'],
+      'n/file-extension-in-import': 'off',
+      'n/global-require': 'off',
+      'n/handle-callback-err': ['warn', '^(err|error)$'],
+      'n/hashbang': 'error',
+      'n/no-callback-literal': 'off',
+      'n/no-deprecated-api': 'error',
+      'n/no-exports-assign': 'error',
+      'n/no-extraneous-import': 'error',
+      'n/no-extraneous-require': 'error',
+      'n/no-missing-import': 'error',
+      'n/no-missing-require': 'error',
+      'n/no-mixed-requires': 'warn',
+      'n/no-new-require': 'warn',
+      'n/no-path-concat': 'warn',
+      'n/no-process-env': 'off',
+      'n/no-process-exit': 'error',
+      'n/no-restricted-import': 'off',
+      'n/no-restricted-require': 'off',
+      'n/no-sync': 'off',
+      'n/no-unpublished-bin': 'error',
+      'n/no-unpublished-import': 'error',
+      'n/no-unpublished-require': 'error',
+      'n/no-unsupported-features/es-builtins': 'error',
+      'n/no-unsupported-features/es-syntax': 'error',
+      'n/no-unsupported-features/node-builtins': 'error',
+      'n/prefer-global/buffer': 'warn',
+      'n/prefer-global/console': 'warn',
+      'n/prefer-global/process': 'warn',
+      'n/prefer-global/text-decoder': 'warn',
+      'n/prefer-global/text-encoder': 'warn',
+      'n/prefer-global/url': 'warn',
+      'n/prefer-global/url-search-params': 'warn',
+      'n/prefer-node-protocol': 'warn',
+      'n/prefer-promises/dns': 'warn',
+      'n/prefer-promises/fs': 'warn',
+      'n/process-exit-as-throw': 'error',
+    },
+  }
+}

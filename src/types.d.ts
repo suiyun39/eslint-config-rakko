@@ -39,3 +39,10 @@ declare module 'eslint-plugin-solid' {
   const solidPlugin: ESLint.Plugin
   export = solidPlugin
 }
+
+declare module 'eslint-plugin-n' {
+  import type { ESLint } from 'eslint'
+
+  const nodePlugin: ESLint.Plugin
+  export = nodePlugin
+}
