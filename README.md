@@ -23,10 +23,13 @@ export default defineConfig({
 
 ## 配置项
 
-| 名称         | 类型                             | 描述                 |
-|------------|--------------------------------|--------------------|
-| ignores    | `string[]`                     | 全局忽略文件配置           |
-| typescript | `TypescriptOptions \| boolean` | 是否启用 TypeScript 规则 |
+| 名称         | 类型                             | 描述               |
+|------------|--------------------------------|------------------|
+| ignores    | `string[]`                     | 全局忽略文件配置         |
+| typescript | `TypescriptOptions \| boolean` | 启用 TypeScript 规则 |
+| react      | `boolean`                      | 启用 React 规则      |
+| solid      | `boolean`                      | 启用 solid 规则      |
+| node       | `boolean`                      | 启用 Node.js 规则    |
 
 ## 参考与感谢
 
