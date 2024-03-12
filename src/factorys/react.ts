@@ -31,10 +31,7 @@ export function react(): Linter.FlatConfig {
       'react/forbid-elements': 'off',
       'react/forbid-foreign-prop-types': 'off',
       'react/forbid-prop-types': 'off',
-      'react/function-component-definition': ['warn', {
-        namedComponents: 'function-declaration',
-        unnamedComponents: 'arrow-function',
-      }],
+      'react/function-component-definition': 'off',
       'react/hook-use-state': 'warn',
       'react/iframe-missing-sandbox': 'warn',
       'react/jsx-boolean-value': ['warn', 'never'],
