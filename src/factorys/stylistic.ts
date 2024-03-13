@@ -13,7 +13,7 @@ export function stylistic(): Linter.FlatConfig {
       '@stylistic/array-bracket-newline': ['error', 'consistent'],
       '@stylistic/array-bracket-spacing': ['error', 'never'],
       '@stylistic/array-element-newline': ['error', 'consistent'],
-      '@stylistic/arrow-parens': ['error', 'as-needed', { requireForBlockBody: true }],
+      '@stylistic/arrow-parens': ['error', 'as-needed'],
       '@stylistic/arrow-spacing': 'error',
       '@stylistic/block-spacing': 'error',
       '@stylistic/brace-style': 'error',
