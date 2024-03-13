@@ -15,7 +15,10 @@ export function typescript(options: TypescriptOptions): Linter.FlatConfig {
     '@typescript-eslint/naming-convention': 'off',
     '@typescript-eslint/no-array-delete': 'warn',
     '@typescript-eslint/no-base-to-string': 'error',
-    '@typescript-eslint/no-confusing-void-expression': 'warn',
+    '@typescript-eslint/no-confusing-void-expression': ['warn', {
+      ignoreArrowShorthand: true,
+      ignoreVoidOperator: true,
+    }],
     '@typescript-eslint/no-duplicate-type-constituents': 'error',
     '@typescript-eslint/no-floating-promises': 'error',
     '@typescript-eslint/no-for-in-array': 'error',
