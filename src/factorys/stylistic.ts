@@ -60,7 +60,9 @@ export function stylistic(): Linter.FlatConfig {
       '@stylistic/keyword-spacing': 'error',
       '@stylistic/linebreak-style': ['error', 'unix'],
       '@stylistic/lines-around-comment': 'error',
-      '@stylistic/lines-between-class-members': 'error',
+      '@stylistic/lines-between-class-members': ['error', 'always', {
+        exceptAfterSingleLine: true,
+      }],
       '@stylistic/max-len': 'off',
       '@stylistic/max-statements-per-line': 'error',
       '@stylistic/member-delimiter-style': ['error', {
