@@ -4,6 +4,7 @@
     "config:recommended",
     "schedule:weekends",
     ":dependencyDashboardApproval",
+    ":semanticCommitTypeAll(chore)",
     ":assignee(suiyun39)",
     ":labels(dependencies)"
   ],
