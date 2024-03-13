@@ -108,7 +108,7 @@ export function react(): Linter.FlatConfig {
       'react/no-will-update-set-state': 'off',
       'react/prefer-es6-class': ['warn', 'always'],
       'react/prefer-exact-props': 'off',
-      'react/prefer-read-only-props': 'warn',
+      'react/prefer-read-only-props': 'off',
       'react/prefer-stateless-function': 'warn',
       'react/prop-types': 'off',
       'react/react-in-jsx-scope': 'off',
