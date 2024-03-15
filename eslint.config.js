@@ -9,4 +9,5 @@ export default defineConfig({
   typescript: {
     project: './tsconfig.json',
   },
+  node: true,
 })

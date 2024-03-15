@@ -1,4 +1,3 @@
-import process from 'node:process'
 import type { Linter, ESLint } from 'eslint'
 import tsESLint from 'typescript-eslint'
 
