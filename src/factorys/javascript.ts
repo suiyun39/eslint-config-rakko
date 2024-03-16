@@ -199,7 +199,7 @@ export function javascript(): Linter.FlatConfig {
       'no-useless-rename': 'warn',
       'no-useless-return': 'warn',
       'no-var': 'warn',
-      'no-void': 'warn',
+      'no-void': 'off',
       'no-warning-comments': 'off',
       'no-with': 'error',
       'object-shorthand': 'off',
