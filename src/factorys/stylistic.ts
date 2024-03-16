@@ -107,7 +107,7 @@ export function stylistic(): Linter.FlatConfig {
       '@stylistic/space-in-parens': 'error',
       '@stylistic/space-infix-ops': 'error',
       '@stylistic/space-unary-ops': 'error',
-      '@stylistic/spaced-comment': ['error', 'always', { markers: ['/'] }],
+      '@stylistic/spaced-comment': 'error',
       '@stylistic/switch-colon-spacing': 'error',
       '@stylistic/template-curly-spacing': 'error',
       '@stylistic/template-tag-spacing': 'error',
