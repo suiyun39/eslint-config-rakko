@@ -23,7 +23,11 @@ export function typescript(options: TypescriptOptions): Linter.FlatConfig {
     '@typescript-eslint/no-for-in-array': 'error',
     '@typescript-eslint/no-implied-eval': 'error',
     '@typescript-eslint/no-meaningless-void-operator': 'warn',
-    '@typescript-eslint/no-misused-promises': 'error',
+    '@typescript-eslint/no-misused-promises': ['error', {
+      checksConditionals: true,
+      checksVoidReturn: false,
+      checksSpreads: true,
+    }],
     '@typescript-eslint/no-mixed-enums': 'warn',
     '@typescript-eslint/no-redundant-type-constituents': 'error',
     '@typescript-eslint/no-throw-literal': 'warn',
