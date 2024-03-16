@@ -24,7 +24,7 @@ export function node(): Linter.FlatConfig {
       'n/no-new-require': 'warn',
       'n/no-path-concat': 'warn',
       'n/no-process-env': 'off',
-      'n/no-process-exit': 'error',
+      'n/no-process-exit': 'off',
       'n/no-restricted-import': 'off',
       'n/no-restricted-require': 'off',
       'n/no-sync': 'off',
