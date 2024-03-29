@@ -1,4 +1,5 @@
 import type { Linter } from 'eslint'
+import type { FlatConfig } from '../common'
 
 export interface IgnoresOptions {
   ignores: NonNullable<Linter.FlatConfig['ignores']>
@@ -7,8 +8,9 @@ export interface IgnoresOptions {
 /**
  * 全局文件忽略配置
  */
-export function ignores(options: IgnoresOptions): Linter.FlatConfig {
+export function ignores(options: IgnoresOptions): FlatConfig {
   return {
+    name: 'ignores',
     ignores: [
       '**/node_modules',
       '**/package-lock.json',

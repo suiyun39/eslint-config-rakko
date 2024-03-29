@@ -1,11 +1,12 @@
 import type { Linter, ESLint } from 'eslint'
+import type { FlatConfig } from '../common'
 import tsESLint from 'typescript-eslint'
 
 export interface TypescriptOptions {
   project: boolean | string | string[]
 }
 
-export function typescript(options: TypescriptOptions): Linter.FlatConfig {
+export function typescript(options: TypescriptOptions): FlatConfig {
   // 这些规则需要类型信息才能运行, 因此仅在配置了 project 选项时才加入规则集
   const typeAwareRules: Linter.FlatConfig['rules'] = {
     '@typescript-eslint/await-thenable': 'error',
@@ -70,6 +71,7 @@ export function typescript(options: TypescriptOptions): Linter.FlatConfig {
   }
 
   return {
+    name: 'typescript',
     files: ['**/*.ts', '**/*.tsx'],
     languageOptions: {
       parser: tsESLint.parser as Linter.ParserModule,

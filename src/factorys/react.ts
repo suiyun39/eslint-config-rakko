@@ -1,11 +1,12 @@
-import type { Linter } from 'eslint'
+import type { FlatConfig } from '../common'
 import reactPlugin from 'eslint-plugin-react'
 import reactHooksPlugin from 'eslint-plugin-react-hooks'
 import * as reactRefreshPlugin from 'eslint-plugin-react-refresh'
 import jsxExpressionsPlugin from 'eslint-plugin-jsx-expressions'
 
-export function react(): Linter.FlatConfig {
+export function react(): FlatConfig {
   return {
+    name: 'react',
     files: ['**/*.jsx', '**/*.tsx'],
     plugins: {
       'react': reactPlugin,

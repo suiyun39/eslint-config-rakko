@@ -1,4 +1,4 @@
-import type { Linter } from 'eslint'
+import type { FlatConfig } from '../common'
 import * as importPlugin from 'eslint-plugin-i'
 
 /**
@@ -8,8 +8,9 @@ import * as importPlugin from 'eslint-plugin-i'
  * 因此被关闭的规则有: import/no-deprecated, import/namespace, import/no-named-as-default,
  * import/no-named-as-default-member, import/default
  */
-export function imports(): Linter.FlatConfig {
+export function imports(): FlatConfig {
   return {
+    name: 'import',
     plugins: {
       import: importPlugin,
     },
