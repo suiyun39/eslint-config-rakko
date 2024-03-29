@@ -9,6 +9,7 @@ export function typescript(options: TypescriptOptions): Linter.FlatConfig {
   // 这些规则需要类型信息才能运行, 因此仅在配置了 project 选项时才加入规则集
   const typeAwareRules: Linter.FlatConfig['rules'] = {
     '@typescript-eslint/await-thenable': 'error',
+    '@typescript-eslint/consistent-return': 'warn',
     '@typescript-eslint/consistent-type-exports': ['warn', { fixMixedExportsWithInlineTypeSpecifier: true }],
     '@typescript-eslint/dot-notation': 'off',
     '@typescript-eslint/naming-convention': 'off',
@@ -44,6 +45,7 @@ export function typescript(options: TypescriptOptions): Linter.FlatConfig {
     '@typescript-eslint/no-unsafe-unary-minus': 'warn',
     '@typescript-eslint/no-useless-template-literals': 'warn',
     '@typescript-eslint/non-nullable-type-assertion-style': 'warn',
+    '@typescript-eslint/only-throw-error': 'warn',
     '@typescript-eslint/prefer-find': 'warn',
     '@typescript-eslint/prefer-includes': 'warn',
     '@typescript-eslint/prefer-nullish-coalescing': ['warn', { ignoreConditionalTests: true }],
@@ -64,6 +66,7 @@ export function typescript(options: TypescriptOptions): Linter.FlatConfig {
     '@typescript-eslint/strict-boolean-expressions': 'off',
     '@typescript-eslint/switch-exhaustiveness-check': 'warn',
     '@typescript-eslint/unbound-method': 'error',
+    '@typescript-eslint/use-unknown-in-catch-callback-variable': 'off',
   }
 
   return {
@@ -81,6 +84,7 @@ export function typescript(options: TypescriptOptions): Linter.FlatConfig {
     },
     rules: {
       // -------- 与 TypeScript 冲突的规则 --------
+      'consistent-return': 'off',
       'dot-notation': 'off',
       'default-param-last': 'off',
       'init-declarations': 'off',

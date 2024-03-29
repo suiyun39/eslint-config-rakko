@@ -160,6 +160,7 @@ export function javascript(): Linter.FlatConfig {
       'no-new-func': 'warn',
       'no-new-wrappers': 'warn',
       'no-nonoctal-decimal-escape': 'error',
+      'no-object-constructor': 'warn',
       'no-octal': 'error',
       'no-octal-escape': 'warn',
       'no-param-reassign': 'warn',
@@ -224,6 +225,10 @@ export function javascript(): Linter.FlatConfig {
       'symbol-description': 'warn',
       'vars-on-top': 'warn',
       'yoda': ['warn', 'never'],
+
+      // -------- Layout & Formatting --------
+      'line-comment-position': 'off',
+      'unicode-bom': 'warn',
     },
   }
 }
