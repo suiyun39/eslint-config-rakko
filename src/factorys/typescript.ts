@@ -30,7 +30,6 @@ export function typescript(options: TypescriptOptions): Linter.FlatConfig {
     }],
     '@typescript-eslint/no-mixed-enums': 'warn',
     '@typescript-eslint/no-redundant-type-constituents': 'error',
-    '@typescript-eslint/no-throw-literal': 'warn',
     '@typescript-eslint/no-unnecessary-boolean-literal-compare': 'warn',
     '@typescript-eslint/no-unnecessary-condition': ['warn', { allowConstantLoopConditions: true }],
     '@typescript-eslint/no-unnecessary-qualifier': 'warn',
@@ -105,7 +104,6 @@ export function typescript(options: TypescriptOptions): Linter.FlatConfig {
       'prefer-destructuring': 'off',
       'prefer-promise-reject-errors': 'off',
       'require-await': 'off',
-      'no-return-await': 'off',
 
       // -------- 常规规则 --------
       '@typescript-eslint/adjacent-overload-signatures': 'warn',
