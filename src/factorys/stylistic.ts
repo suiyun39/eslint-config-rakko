@@ -1,11 +1,11 @@
 import type { ESLint } from 'eslint'
-import type { FlatConfig } from '../common'
+import type { FlatConfigItem } from 'eslint-flat-config-utils'
 import stylisticPlugin from '@stylistic/eslint-plugin'
 
 /**
  * 代码风格规则
  */
-export function stylisticFactory(): FlatConfig {
+export function stylisticFactory(): FlatConfigItem {
   return {
     name: 'stylistic',
     plugins: {
