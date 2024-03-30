@@ -1,11 +1,11 @@
-import type { FlatConfig } from '../common'
+import type { FlatConfigItem } from 'eslint-flat-config-utils'
 import globals from 'globals'
 
 /**
  * 此处包含了 javascript 相关规则
  * 由于 eslint 不再维护样式类规则, 此处样式配置应使用 eslint stylistic 提供的规则
  */
-export function javascriptFactory(): FlatConfig {
+export function javascriptFactory(): FlatConfigItem {
   return {
     name: 'javascript',
     linterOptions: {
