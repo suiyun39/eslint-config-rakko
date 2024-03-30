@@ -1,26 +1,27 @@
-import type { FlatConfig } from '../common'
+import { pipe, type FlatConfigItem } from 'eslint-flat-config-utils'
 import reactPlugin from 'eslint-plugin-react'
 import reactHooksPlugin from 'eslint-plugin-react-hooks'
 import * as reactRefreshPlugin from 'eslint-plugin-react-refresh'
 import jsxExpressionsPlugin from 'eslint-plugin-jsx-expressions'
 
-export function reactFactory(): FlatConfig {
-  return {
+/**
+ * React 相关规则
+ * 与 prop-types 相关的规则都应被关闭, 由 TypeScript 类型检查代替
+ * 与 @stylistic/jsx 重复的样式规则都应被关闭, 以避免重复检查
+ */
+export async function reactFactory(): Promise<FlatConfigItem[]> {
+  const config = pipe({
     name: 'react',
     files: ['**/*.jsx', '**/*.tsx'],
     plugins: {
       'react': reactPlugin,
       'react-hooks': reactHooksPlugin,
-      'react-refresh': reactRefreshPlugin,
-      'jsx-expressions': jsxExpressionsPlugin,
     },
     settings: {
       react: { version: 'detect' },
     },
     rules: {
       // -------- React --------
-      // 与 prop-types 相关的规则都将 off, 由 TypeScript 类型检查代替
-      // 与 @stylistic/jsx 重复的样式规则都将 off 以避免重复检查
       'react/boolean-prop-naming': 'off',
       'react/button-has-type': 'warn',
       'react/checked-requires-onchange-or-readonly': 'off',
@@ -128,12 +129,24 @@ export function reactFactory(): FlatConfig {
       // -------- React Hooks --------
       'react-hooks/rules-of-hooks': 'error',
       'react-hooks/exhaustive-deps': 'error',
+    },
+  })
 
+  await config.append({
+    name: 'react-extra',
+    files: ['**/*.jsx', '**/*.tsx'],
+    plugins: {
+      'react-refresh': reactRefreshPlugin,
+      'jsx-expressions': jsxExpressionsPlugin,
+    },
+    rules: {
       // -------- React Refresh --------
       'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
 
       // -------- JSX Expressions --------
       'jsx-expressions/strict-logical-expressions': 'error',
     },
-  }
+  })
+
+  return config.toConfigs()
 }

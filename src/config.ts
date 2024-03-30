@@ -4,6 +4,7 @@ import { ignoresFactory, type IgnoresOptions } from './factorys/ignores'
 import { importsFactory } from './factorys/imports'
 import { javascriptFactory } from './factorys/javascript'
 import { nodeFactory } from './factorys/node'
+import { reactFactory } from './factorys/react'
 
 export interface UserOptions {
   // 文件忽略配置
@@ -14,10 +15,13 @@ export interface UserOptions {
 
   // 是否启用针对 nodejs 的规则
   node?: boolean
+
+  // 是否启用针对 React 的规则
+  react?: boolean
 }
 
 export async function defineConfig(options: UserOptions): Promise<FlatConfigItem[]> {
-  const { ignores, overrides, node } = options
+  const { ignores, overrides, node, react } = options
 
   // -------- 基础配置 --------
   const config = pipe(
@@ -29,6 +33,10 @@ export async function defineConfig(options: UserOptions): Promise<FlatConfigItem
   // -------- 可选配置 --------
   if (node) {
     await config.append(nodeFactory())
+  }
+
+  if (react) {
+    await config.append(reactFactory())
   }
 
   // -------- 配置覆盖 --------
