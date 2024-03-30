@@ -1,16 +1,16 @@
-import type { FlatConfig } from '../common'
+import type { FlatConfigItem } from 'eslint-flat-config-utils'
 import * as importPlugin from 'eslint-plugin-i'
 
 /**
- * import 规则
+ * import 相关规则
  *
  * todo: 在当前版本中, 部分规则无法在 flat config 中使用, 详见: https://github.com/import-js/eslint-plugin-import/issues/2556
  * 因此被关闭的规则有: import/no-deprecated, import/namespace, import/no-named-as-default,
  * import/no-named-as-default-member, import/default
  */
-export function importsFactory(): FlatConfig {
+export function importsFactory(): FlatConfigItem {
   return {
-    name: 'import',
+    name: 'imports',
     plugins: {
       import: importPlugin,
     },
