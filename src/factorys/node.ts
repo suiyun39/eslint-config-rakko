@@ -1,7 +1,7 @@
 import type { FlatConfig } from '../common'
 import nodePlugin from 'eslint-plugin-n'
 
-export function node(): FlatConfig {
+export function nodeFactory(): FlatConfig {
   return {
     name: 'node',
     plugins: {

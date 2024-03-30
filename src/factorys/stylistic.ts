@@ -5,7 +5,7 @@ import stylisticPlugin from '@stylistic/eslint-plugin'
 /**
  * 代码风格规则
  */
-export function stylistic(): FlatConfig {
+export function stylisticFactory(): FlatConfig {
   return {
     name: 'stylistic',
     plugins: {

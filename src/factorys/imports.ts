@@ -8,7 +8,7 @@ import * as importPlugin from 'eslint-plugin-i'
  * 因此被关闭的规则有: import/no-deprecated, import/namespace, import/no-named-as-default,
  * import/no-named-as-default-member, import/default
  */
-export function imports(): FlatConfig {
+export function importsFactory(): FlatConfig {
   return {
     name: 'import',
     plugins: {

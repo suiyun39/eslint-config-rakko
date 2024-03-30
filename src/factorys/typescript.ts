@@ -6,7 +6,7 @@ export interface TypescriptOptions {
   project: boolean | string | string[]
 }
 
-export function typescript(options: TypescriptOptions): FlatConfig {
+export function typescriptFactory(options: TypescriptOptions): FlatConfig {
   // 这些规则需要类型信息才能运行, 因此仅在配置了 project 选项时才加入规则集
   const typeAwareRules: Linter.FlatConfig['rules'] = {
     '@typescript-eslint/await-thenable': 'error',

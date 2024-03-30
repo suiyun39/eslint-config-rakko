@@ -8,7 +8,7 @@ export interface IgnoresOptions {
 /**
  * 全局文件忽略配置
  */
-export function ignores(options: IgnoresOptions): FlatConfig {
+export function ignoresFactory(options: IgnoresOptions): FlatConfig {
   return {
     ignores: [
       '**/node_modules',

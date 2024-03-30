@@ -4,7 +4,7 @@ import reactHooksPlugin from 'eslint-plugin-react-hooks'
 import * as reactRefreshPlugin from 'eslint-plugin-react-refresh'
 import jsxExpressionsPlugin from 'eslint-plugin-jsx-expressions'
 
-export function react(): FlatConfig {
+export function reactFactory(): FlatConfig {
   return {
     name: 'react',
     files: ['**/*.jsx', '**/*.tsx'],

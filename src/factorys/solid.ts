@@ -1,7 +1,7 @@
 import type { FlatConfig } from '../common'
 import solidPlugin from 'eslint-plugin-solid'
 
-export function solid(): FlatConfig {
+export function solidFactory(): FlatConfig {
   return {
     name: 'solid',
     files: ['**/*.jsx', '**/*.tsx'],
