@@ -10,7 +10,6 @@ export interface IgnoresOptions {
  */
 export function ignores(options: IgnoresOptions): FlatConfig {
   return {
-    name: 'ignores',
     ignores: [
       '**/node_modules',
       '**/package-lock.json',
