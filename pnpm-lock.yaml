@@ -8,6 +8,9 @@ dependencies:
   '@stylistic/eslint-plugin':
     specifier: ^1.7.0
     version: 1.7.0(eslint@8.57.0)(typescript@5.4.3)
+  eslint-flat-config-utils:
+    specifier: ^0.1.2
+    version: 0.1.2
   eslint-plugin-i:
     specifier: ^2.29.1
     version: 2.29.1(@typescript-eslint/parser@6.21.0)(eslint@8.57.0)
@@ -1515,6 +1518,12 @@ packages:
       eslint: '>=6.0.0'
     dependencies:
       eslint: 8.57.0
+    dev: false
+
+  /eslint-flat-config-utils@0.1.2:
+    resolution: {integrity: sha512-NfeUJrbARSHGux2no/zz+YOjfMuPXpedcxRTqov3mlx9PJV2CYAJEj2EjbNSEyHMXQwNCfTtQVZXMSiktQTcpA==}
+    dependencies:
+      '@types/eslint': 8.56.6
     dev: false
 
   /eslint-flat-config-viewer@0.1.20(eslint@8.57.0)(typescript@5.4.3):
