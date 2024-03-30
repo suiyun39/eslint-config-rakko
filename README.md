@@ -31,6 +31,34 @@ export default defineConfig({
 | solid      | `boolean`                      | 启用 solid 规则      |
 | node       | `boolean`                      | 启用 Node.js 规则    |
 
+## 规则覆盖
+
+本规则集允许通过 `overrides` 配置覆盖各规则集中的规则，示例如下：
+
+```javascript
+import { defineConfig } from 'eslint-config-rakko'
+
+export default defineConfig({
+  overrides: {
+    'javascript': {
+      rules: {
+        'no-console': 'off',
+      }
+    },
+  },
+})
+```
+
+其中 `overrides` 的 key 为规则集名称，value 为规则集配置，在内部将于默认配置进行合并。各规则集名称如下：
+
+- `imports`
+- `javascript`
+- `node`
+- `react`
+- `solid`
+- `stylistic`
+- `typescript`
+
 ## 参考与感谢
 
 - [@antfu/eslint-config](https://github.com/antfu/eslint-config)
