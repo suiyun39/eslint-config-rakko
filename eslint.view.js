@@ -12,4 +12,5 @@ export default defineConfig({
   solid: true,
   react: true,
   node: true,
+  unicorn: true,
 })

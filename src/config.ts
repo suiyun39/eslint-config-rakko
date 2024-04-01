@@ -8,6 +8,7 @@ import { reactFactory } from './factorys/react'
 import { solidFactory } from './factorys/solid'
 import { stylisticFactory } from './factorys/stylistic'
 import { typescriptFactory, type TypescriptOptions } from './factorys/typescript'
+import { unicornFactory } from './factorys/unicorn'
 
 export interface UserOptions {
   // 文件忽略配置
@@ -27,10 +28,13 @@ export interface UserOptions {
 
   // 启用 Solid 规则集
   solid?: boolean
+
+  // 启用 unicorn 规则集
+  unicorn?: boolean
 }
 
 export async function defineConfig(options: UserOptions): Promise<FlatConfigItem[]> {
-  const { ignores, overrides, typescript, node, react, solid } = options
+  const { ignores, overrides, typescript, node, react, solid, unicorn } = options
 
   // -------- 基础配置 --------
   const config = pipe(
@@ -56,6 +60,10 @@ export async function defineConfig(options: UserOptions): Promise<FlatConfigItem
 
   if (solid) {
     await config.append(solidFactory())
+  }
+
+  if (unicorn) {
+    await config.append(unicornFactory())
   }
 
   // -------- 配置覆盖 --------

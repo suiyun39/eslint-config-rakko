@@ -46,3 +46,10 @@ declare module 'eslint-plugin-n' {
   const nodePlugin: ESLint.Plugin
   export = nodePlugin
 }
+
+declare module 'eslint-plugin-unicorn' {
+  import type { ESLint } from 'eslint'
+
+  const unicornPlugin: ESLint.Plugin
+  export = unicornPlugin
+}
