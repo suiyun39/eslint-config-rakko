@@ -16,6 +16,7 @@
     "lint": "eslint .",
     "prepare": "husky"
   },
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/index.js",
