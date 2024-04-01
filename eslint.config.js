@@ -10,4 +10,5 @@ export default defineConfig({
     project: './tsconfig.json',
   },
   node: true,
+  unicorn: true,
 })
