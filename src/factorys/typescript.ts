@@ -1,85 +1,19 @@
 import type { Linter, ESLint } from 'eslint'
-import type { FlatConfig } from '../common'
+import { pipe, type FlatConfigItem } from 'eslint-flat-config-utils'
 import tsESLint from 'typescript-eslint'
 
 export interface TypescriptOptions {
-  project: boolean | string | string[]
+  project?: string | string[]
 }
 
-export function typescriptFactory(options: TypescriptOptions): FlatConfig {
-  // 这些规则需要类型信息才能运行, 因此仅在配置了 project 选项时才加入规则集
-  const typeAwareRules: Linter.FlatConfig['rules'] = {
-    '@typescript-eslint/await-thenable': 'error',
-    '@typescript-eslint/consistent-return': 'warn',
-    '@typescript-eslint/consistent-type-exports': ['warn', { fixMixedExportsWithInlineTypeSpecifier: true }],
-    '@typescript-eslint/dot-notation': 'off',
-    '@typescript-eslint/naming-convention': 'off',
-    '@typescript-eslint/no-array-delete': 'warn',
-    '@typescript-eslint/no-base-to-string': 'error',
-    '@typescript-eslint/no-confusing-void-expression': ['warn', {
-      ignoreArrowShorthand: true,
-      ignoreVoidOperator: true,
-    }],
-    '@typescript-eslint/no-duplicate-type-constituents': 'error',
-    '@typescript-eslint/no-floating-promises': 'error',
-    '@typescript-eslint/no-for-in-array': 'error',
-    '@typescript-eslint/no-implied-eval': 'error',
-    '@typescript-eslint/no-meaningless-void-operator': 'off',
-    '@typescript-eslint/no-misused-promises': ['error', {
-      checksConditionals: true,
-      checksVoidReturn: false,
-      checksSpreads: true,
-    }],
-    '@typescript-eslint/no-mixed-enums': 'warn',
-    '@typescript-eslint/no-redundant-type-constituents': 'error',
-    '@typescript-eslint/no-unnecessary-boolean-literal-compare': 'warn',
-    '@typescript-eslint/no-unnecessary-condition': ['warn', { allowConstantLoopConditions: true }],
-    '@typescript-eslint/no-unnecessary-qualifier': 'warn',
-    '@typescript-eslint/no-unnecessary-type-arguments': 'warn',
-    '@typescript-eslint/no-unnecessary-type-assertion': 'error',
-    '@typescript-eslint/no-unsafe-argument': 'error',
-    '@typescript-eslint/no-unsafe-assignment': 'error',
-    '@typescript-eslint/no-unsafe-call': 'error',
-    '@typescript-eslint/no-unsafe-enum-comparison': 'error',
-    '@typescript-eslint/no-unsafe-member-access': 'error',
-    '@typescript-eslint/no-unsafe-return': 'error',
-    '@typescript-eslint/no-unsafe-unary-minus': 'warn',
-    '@typescript-eslint/no-useless-template-literals': 'warn',
-    '@typescript-eslint/non-nullable-type-assertion-style': 'warn',
-    '@typescript-eslint/only-throw-error': 'warn',
-    '@typescript-eslint/prefer-find': 'warn',
-    '@typescript-eslint/prefer-includes': 'warn',
-    '@typescript-eslint/prefer-nullish-coalescing': ['warn', { ignoreConditionalTests: true }],
-    '@typescript-eslint/prefer-optional-chain': 'warn',
-    '@typescript-eslint/prefer-promise-reject-errors': 'warn',
-    '@typescript-eslint/prefer-readonly': 'warn',
-    '@typescript-eslint/prefer-readonly-parameter-types': 'off',
-    '@typescript-eslint/prefer-reduce-type-parameter': 'warn',
-    '@typescript-eslint/prefer-regexp-exec': 'warn',
-    '@typescript-eslint/prefer-return-this-type': 'warn',
-    '@typescript-eslint/prefer-string-starts-ends-with': 'warn',
-    '@typescript-eslint/promise-function-async': 'warn',
-    '@typescript-eslint/require-array-sort-compare': 'warn',
-    '@typescript-eslint/require-await': 'error',
-    '@typescript-eslint/restrict-plus-operands': 'error',
-    '@typescript-eslint/restrict-template-expressions': 'error',
-    '@typescript-eslint/return-await': 'warn',
-    '@typescript-eslint/strict-boolean-expressions': 'off',
-    '@typescript-eslint/switch-exhaustiveness-check': 'warn',
-    '@typescript-eslint/unbound-method': 'error',
-    '@typescript-eslint/use-unknown-in-catch-callback-variable': 'off',
-  }
+export async function typescriptFactory(options: TypescriptOptions): Promise<FlatConfigItem[]> {
+  const { project } = options
 
-  return {
+  const config = pipe({
     name: 'typescript',
     files: ['**/*.ts', '**/*.tsx'],
     languageOptions: {
       parser: tsESLint.parser as Linter.ParserModule,
-      parserOptions: {
-        sourceType: 'module',
-        project: options.project,
-        tsconfigRootDir: process.cwd(),
-      },
     },
     plugins: {
       '@typescript-eslint': tsESLint.plugin as ESLint.Plugin,
@@ -187,9 +121,87 @@ export function typescriptFactory(options: TypescriptOptions): FlatConfig {
       '@typescript-eslint/triple-slash-reference': 'error',
       '@typescript-eslint/typedef': 'off',
       '@typescript-eslint/unified-signatures': 'warn',
-
-      // -------- 需要类型信息的规则 --------
-      ...options.project ? typeAwareRules : {},
     },
+  })
+
+  // 需要类型信息的规则
+  if (project) {
+    await config.append({
+      name: 'typescript-type-aware',
+      files: ['**/*.ts', '**/*.tsx'],
+      languageOptions: {
+        parser: tsESLint.parser as Linter.ParserModule,
+        parserOptions: {
+          project: project,
+          tsconfigRootDir: process.cwd(),
+        },
+      },
+      plugins: {
+        '@typescript-eslint': tsESLint.plugin as ESLint.Plugin,
+      },
+      rules: {
+        '@typescript-eslint/await-thenable': 'error',
+        '@typescript-eslint/consistent-return': 'warn',
+        '@typescript-eslint/consistent-type-exports': ['warn', { fixMixedExportsWithInlineTypeSpecifier: true }],
+        '@typescript-eslint/dot-notation': 'off',
+        '@typescript-eslint/naming-convention': 'off',
+        '@typescript-eslint/no-array-delete': 'warn',
+        '@typescript-eslint/no-base-to-string': 'error',
+        '@typescript-eslint/no-confusing-void-expression': ['warn', {
+          ignoreArrowShorthand: true,
+          ignoreVoidOperator: true,
+        }],
+        '@typescript-eslint/no-duplicate-type-constituents': 'error',
+        '@typescript-eslint/no-floating-promises': 'error',
+        '@typescript-eslint/no-for-in-array': 'error',
+        '@typescript-eslint/no-implied-eval': 'error',
+        '@typescript-eslint/no-meaningless-void-operator': 'off',
+        '@typescript-eslint/no-misused-promises': ['error', {
+          checksConditionals: true,
+          checksVoidReturn: false,
+          checksSpreads: true,
+        }],
+        '@typescript-eslint/no-mixed-enums': 'warn',
+        '@typescript-eslint/no-redundant-type-constituents': 'error',
+        '@typescript-eslint/no-unnecessary-boolean-literal-compare': 'warn',
+        '@typescript-eslint/no-unnecessary-condition': ['warn', { allowConstantLoopConditions: true }],
+        '@typescript-eslint/no-unnecessary-qualifier': 'warn',
+        '@typescript-eslint/no-unnecessary-type-arguments': 'warn',
+        '@typescript-eslint/no-unnecessary-type-assertion': 'error',
+        '@typescript-eslint/no-unsafe-argument': 'error',
+        '@typescript-eslint/no-unsafe-assignment': 'error',
+        '@typescript-eslint/no-unsafe-call': 'error',
+        '@typescript-eslint/no-unsafe-enum-comparison': 'error',
+        '@typescript-eslint/no-unsafe-member-access': 'error',
+        '@typescript-eslint/no-unsafe-return': 'error',
+        '@typescript-eslint/no-unsafe-unary-minus': 'warn',
+        '@typescript-eslint/no-useless-template-literals': 'warn',
+        '@typescript-eslint/non-nullable-type-assertion-style': 'warn',
+        '@typescript-eslint/only-throw-error': 'warn',
+        '@typescript-eslint/prefer-find': 'warn',
+        '@typescript-eslint/prefer-includes': 'warn',
+        '@typescript-eslint/prefer-nullish-coalescing': ['warn', { ignoreConditionalTests: true }],
+        '@typescript-eslint/prefer-optional-chain': 'warn',
+        '@typescript-eslint/prefer-promise-reject-errors': 'warn',
+        '@typescript-eslint/prefer-readonly': 'warn',
+        '@typescript-eslint/prefer-readonly-parameter-types': 'off',
+        '@typescript-eslint/prefer-reduce-type-parameter': 'warn',
+        '@typescript-eslint/prefer-regexp-exec': 'warn',
+        '@typescript-eslint/prefer-return-this-type': 'warn',
+        '@typescript-eslint/prefer-string-starts-ends-with': 'warn',
+        '@typescript-eslint/promise-function-async': 'warn',
+        '@typescript-eslint/require-array-sort-compare': 'warn',
+        '@typescript-eslint/require-await': 'error',
+        '@typescript-eslint/restrict-plus-operands': 'error',
+        '@typescript-eslint/restrict-template-expressions': 'error',
+        '@typescript-eslint/return-await': 'warn',
+        '@typescript-eslint/strict-boolean-expressions': 'off',
+        '@typescript-eslint/switch-exhaustiveness-check': 'warn',
+        '@typescript-eslint/unbound-method': 'error',
+        '@typescript-eslint/use-unknown-in-catch-callback-variable': 'off',
+      },
+    })
   }
+
+  return config.toConfigs()
 }

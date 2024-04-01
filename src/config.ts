@@ -7,6 +7,7 @@ import { nodeFactory } from './factorys/node'
 import { reactFactory } from './factorys/react'
 import { solidFactory } from './factorys/solid'
 import { stylisticFactory } from './factorys/stylistic'
+import { typescriptFactory, type TypescriptOptions } from './factorys/typescript'
 
 export interface UserOptions {
   // 文件忽略配置
@@ -15,18 +16,21 @@ export interface UserOptions {
   // 配置覆盖
   overrides?: Parameters<FlatConfigPipeline['overrides']>[0]
 
-  // 是否启用针对 nodejs 的规则
+  // 启用 TypeScript 规则集
+  typescript?: boolean | TypescriptOptions
+
+  // 启用 nodejs 规则集
   node?: boolean
 
-  // 是否启用针对 React 的规则
+  // 启用 React 规则集
   react?: boolean
 
-  // 是否启用针对 Solid 的规则
+  // 启用 Solid 规则集
   solid?: boolean
 }
 
 export async function defineConfig(options: UserOptions): Promise<FlatConfigItem[]> {
-  const { ignores, overrides, node, react, solid } = options
+  const { ignores, overrides, typescript, node, react, solid } = options
 
   // -------- 基础配置 --------
   const config = pipe(
@@ -37,6 +41,11 @@ export async function defineConfig(options: UserOptions): Promise<FlatConfigItem
   )
 
   // -------- 可选配置 --------
+  if (typescript) {
+    const opt = typeof typescript === 'object' ? typescript : {}
+    await config.append(typescriptFactory(opt))
+  }
+
   if (node) {
     await config.append(nodeFactory())
   }
