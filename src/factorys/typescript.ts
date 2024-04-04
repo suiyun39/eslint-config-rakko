@@ -1,5 +1,5 @@
 import type { Linter, ESLint } from 'eslint'
-import { pipe, type FlatConfigItem } from 'eslint-flat-config-utils'
+import { composer, type FlatConfigItem } from 'eslint-flat-config-utils'
 import tsESLint from 'typescript-eslint'
 
 export interface TypescriptOptions {
@@ -9,7 +9,7 @@ export interface TypescriptOptions {
 export async function typescriptFactory(options: TypescriptOptions): Promise<FlatConfigItem[]> {
   const { project } = options
 
-  const config = pipe({
+  const config = composer({
     name: 'typescript',
     files: ['**/*.ts', '**/*.tsx'],
     languageOptions: {

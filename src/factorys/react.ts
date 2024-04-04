@@ -1,4 +1,4 @@
-import { pipe, type FlatConfigItem } from 'eslint-flat-config-utils'
+import { composer, type FlatConfigItem } from 'eslint-flat-config-utils'
 import reactPlugin from 'eslint-plugin-react'
 import reactHooksPlugin from 'eslint-plugin-react-hooks'
 import * as reactRefreshPlugin from 'eslint-plugin-react-refresh'
@@ -10,7 +10,7 @@ import jsxExpressionsPlugin from 'eslint-plugin-jsx-expressions'
  * 与 @stylistic/jsx 重复的样式规则都应被关闭, 以避免重复检查
  */
 export async function reactFactory(): Promise<FlatConfigItem[]> {
-  const config = pipe({
+  const config = composer({
     name: 'react',
     files: ['**/*.jsx', '**/*.tsx'],
     plugins: {

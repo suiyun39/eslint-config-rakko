@@ -1,4 +1,4 @@
-import { pipe, type FlatConfigItem, type FlatConfigPipeline } from 'eslint-flat-config-utils'
+import { composer, type FlatConfigItem, type FlatConfigComposer } from 'eslint-flat-config-utils'
 
 import { ignoresFactory, type IgnoresOptions } from './factorys/ignores'
 import { importsFactory } from './factorys/imports'
@@ -15,7 +15,7 @@ export interface UserOptions {
   ignores?: IgnoresOptions['ignores']
 
   // 配置覆盖
-  overrides?: Parameters<FlatConfigPipeline['overrides']>[0]
+  overrides?: Parameters<FlatConfigComposer['overrides']>[0]
 
   // 启用 TypeScript 规则集
   typescript?: boolean | TypescriptOptions
@@ -37,7 +37,7 @@ export async function defineConfig(options: UserOptions): Promise<FlatConfigItem
   const { ignores, overrides, typescript, node, react, solid, unicorn } = options
 
   // -------- 基础配置 --------
-  const config = pipe(
+  const config = composer(
     ignoresFactory({ ignores }),
     importsFactory(),
     javascriptFactory(),
