@@ -3,7 +3,6 @@ import { composer } from 'eslint-flat-config-utils'
 import reactPlugin from 'eslint-plugin-react'
 import reactHooksPlugin from 'eslint-plugin-react-hooks'
 import * as reactRefreshPlugin from 'eslint-plugin-react-refresh'
-import jsxExpressionsPlugin from 'eslint-plugin-jsx-expressions'
 
 /**
  * React 相关规则
@@ -138,14 +137,10 @@ export async function reactFactory(): Promise<Linter.FlatConfig[]> {
     files: ['**/*.jsx', '**/*.tsx'],
     plugins: {
       'react-refresh': reactRefreshPlugin,
-      'jsx-expressions': jsxExpressionsPlugin,
     },
     rules: {
       // -------- React Refresh --------
       'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
-
-      // -------- JSX Expressions --------
-      'jsx-expressions/strict-logical-expressions': 'error',
     },
   })
 

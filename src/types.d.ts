@@ -26,13 +26,6 @@ declare module 'eslint-plugin-react-refresh' {
   export = reactRefreshPlugin
 }
 
-declare module 'eslint-plugin-jsx-expressions' {
-  import type { ESLint } from 'eslint'
-
-  const jsxExpressionsPlugin: ESLint.Plugin
-  export = jsxExpressionsPlugin
-}
-
 declare module 'eslint-plugin-solid' {
   import type { ESLint } from 'eslint'
 
