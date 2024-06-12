@@ -20,7 +20,7 @@ export function javascriptFactory(): Linter.FlatConfig {
         ecmaFeatures: { jsx: true },
       },
       globals: {
-        ...globals.es2021,
+        ...globals.es2024,
         ...globals.browser,
         ...globals.node,
       },
