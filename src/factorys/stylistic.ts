@@ -61,6 +61,7 @@ export function stylisticFactory(): Linter.FlatConfig {
 
       '@stylistic/key-spacing': 'error',
       '@stylistic/keyword-spacing': 'error',
+      '@stylistic/line-comment-position': 'off',
       '@stylistic/linebreak-style': ['error', 'unix'],
       '@stylistic/lines-around-comment': 'error',
       '@stylistic/lines-between-class-members': ['error', 'always', {
@@ -73,6 +74,7 @@ export function stylisticFactory(): Linter.FlatConfig {
         singleline: { delimiter: 'semi', requireLast: false },
         multilineDetection: 'brackets',
       }],
+      '@stylistic/multiline-comment-style': 'off',
       '@stylistic/multiline-ternary': ['error', 'always-multiline'],
       '@stylistic/new-parens': 'error',
       '@stylistic/newline-per-chained-call': ['error', { ignoreChainWithDepth: 6 }],
