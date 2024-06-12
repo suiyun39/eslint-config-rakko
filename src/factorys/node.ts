@@ -1,7 +1,7 @@
-import type { FlatConfigItem } from 'eslint-flat-config-utils'
+import type { Linter } from 'eslint'
 import nodePlugin from 'eslint-plugin-n'
 
-export function nodeFactory(): FlatConfigItem {
+export function nodeFactory(): Linter.FlatConfig {
   return {
     name: 'node',
     plugins: {

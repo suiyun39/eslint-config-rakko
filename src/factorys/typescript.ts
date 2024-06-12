@@ -1,12 +1,12 @@
 import type { Linter, ESLint } from 'eslint'
-import { composer, type FlatConfigItem } from 'eslint-flat-config-utils'
+import { composer } from 'eslint-flat-config-utils'
 import tsESLint from 'typescript-eslint'
 
 export interface TypescriptOptions {
   project?: string | string[]
 }
 
-export async function typescriptFactory(options: TypescriptOptions): Promise<FlatConfigItem[]> {
+export async function typescriptFactory(options: TypescriptOptions): Promise<Linter.FlatConfig[]> {
   const { project } = options
 
   const config = composer({

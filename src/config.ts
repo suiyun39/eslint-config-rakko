@@ -1,4 +1,5 @@
-import { composer, type FlatConfigItem, type FlatConfigComposer } from 'eslint-flat-config-utils'
+import type { Linter } from 'eslint'
+import { composer, type FlatConfigComposer } from 'eslint-flat-config-utils'
 
 import { ignoresFactory, type IgnoresOptions } from './factorys/ignores'
 import { importsFactory } from './factorys/imports'
@@ -33,7 +34,7 @@ export interface UserOptions {
   unicorn?: boolean
 }
 
-export async function defineConfig(options: UserOptions): Promise<FlatConfigItem[]> {
+export async function defineConfig(options: UserOptions): Promise<Linter.FlatConfig[]> {
   const { ignores, overrides, typescript, node, react, solid, unicorn } = options
 
   // -------- 基础配置 --------

@@ -1,7 +1,7 @@
-import type { FlatConfigItem } from 'eslint-flat-config-utils'
+import type { Linter } from 'eslint'
 import solidPlugin from 'eslint-plugin-solid'
 
-export function solidFactory(): FlatConfigItem {
+export function solidFactory(): Linter.FlatConfig {
   return {
     name: 'solid',
     files: ['**/*.jsx', '**/*.tsx'],

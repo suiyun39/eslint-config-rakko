@@ -1,7 +1,7 @@
-import type { FlatConfigItem } from 'eslint-flat-config-utils'
+import type { Linter } from 'eslint'
 import unicornPlugin from 'eslint-plugin-unicorn'
 
-export function unicornFactory(): FlatConfigItem {
+export function unicornFactory(): Linter.FlatConfig {
   return {
     name: 'unicorn',
     plugins: {
