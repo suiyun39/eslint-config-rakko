@@ -1,4 +1,4 @@
-declare module 'eslint-plugin-i' {
+declare module 'eslint-plugin-import-x' {
   import type { ESLint } from 'eslint'
 
   const importPlugin: ESLint.Plugin
