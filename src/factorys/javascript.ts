@@ -120,7 +120,7 @@ export function javascriptFactory(): Linter.FlatConfig {
       'max-params': 'off',
       'max-statements': 'off',
       'multiline-comment-style': 'off',
-      'new-cap': 'warn',
+      'new-cap': ['warn', { newIsCap: true, capIsNew: false }],
       'no-alert': 'off',
       'no-array-constructor': 'warn',
       'no-bitwise': 'off',
