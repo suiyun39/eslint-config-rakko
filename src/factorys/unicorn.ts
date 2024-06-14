@@ -42,7 +42,7 @@ export function unicornFactory(): Linter.FlatConfig {
       'unicorn/no-instanceof-array': 'error',
       'unicorn/no-invalid-fetch-options': 'error',
       'unicorn/no-invalid-remove-event-listener': 'error',
-      'unicorn/no-keyword-prefix': 'error',
+      'unicorn/no-keyword-prefix': 'off',
       'unicorn/no-lonely-if': 'error',
       'unicorn/no-magic-array-flat-depth': 'error',
       'unicorn/no-negated-condition': 'off',
