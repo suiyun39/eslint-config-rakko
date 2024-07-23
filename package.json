@@ -9,7 +9,7 @@
     "eslint-config"
   ],
   "type": "module",
-  "packageManager": "pnpm@9.3.0",
+  "packageManager": "pnpm@9.6.0",
   "scripts": {
     "start": "node ./scripts/view-config.js",
     "build": "tsc && tsup",
@@ -28,31 +28,31 @@
     "dist"
   ],
   "devDependencies": {
-    "@types/eslint": "^8.56.10",
-    "@types/node": "^20.14.2",
+    "@types/eslint": "^8.56.11",
+    "@types/node": "^20.14.11",
     "eslint": "^8.57.0",
     "eslint-flat-config-viewer": "^0.1.20",
-    "husky": "^9.0.11",
-    "lint-staged": "^15.2.6",
+    "husky": "^9.1.1",
+    "lint-staged": "^15.2.7",
     "sucrase": "^3.35.0",
-    "tsup": "^8.1.0",
-    "typescript": "^5.4.5"
+    "tsup": "^8.2.2",
+    "typescript": "^5.5.4"
   },
   "peerDependencies": {
     "eslint": "^8.57.0"
   },
   "dependencies": {
-    "@stylistic/eslint-plugin": "^2.1.0",
+    "@stylistic/eslint-plugin": "^2.3.0",
     "eslint-flat-config-utils": "^0.2.5",
-    "eslint-plugin-import-x": "^0.5.1",
-    "eslint-plugin-n": "17.8.1",
-    "eslint-plugin-react": "^7.34.2",
+    "eslint-plugin-import-x": "^0.5.3",
+    "eslint-plugin-n": "17.9.0",
+    "eslint-plugin-react": "^7.35.0",
     "eslint-plugin-react-hooks": "^4.6.2",
-    "eslint-plugin-react-refresh": "^0.4.7",
-    "eslint-plugin-solid": "^0.14.0",
+    "eslint-plugin-react-refresh": "^0.4.9",
+    "eslint-plugin-solid": "^0.14.1",
     "eslint-plugin-unicorn": "^53.0.0",
-    "globals": "^15.4.0",
-    "typescript-eslint": "^7.13.0"
+    "globals": "^15.8.0",
+    "typescript-eslint": "^7.17.0"
   },
   "lint-staged": {
     "*": "eslint --fix"
