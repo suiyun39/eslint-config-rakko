@@ -60,7 +60,6 @@ export function javascriptFactory(): Linter.Config {
       'no-loss-of-precision': 'error',
       'no-misleading-character-class': 'error',
       'no-new-native-nonconstructor': 'warn',
-      'no-new-symbol': 'error',
       'no-obj-calls': 'error',
       'no-promise-executor-return': 'warn',
       'no-prototype-builtins': 'error',
@@ -119,7 +118,6 @@ export function javascriptFactory(): Linter.Config {
       'max-nested-callbacks': ['warn', 3],
       'max-params': 'off',
       'max-statements': 'off',
-      'multiline-comment-style': 'off',
       'new-cap': ['warn', { newIsCap: true, capIsNew: false }],
       'no-alert': 'off',
       'no-array-constructor': 'warn',
@@ -228,7 +226,6 @@ export function javascriptFactory(): Linter.Config {
       'yoda': ['warn', 'never'],
 
       // -------- Layout & Formatting --------
-      'line-comment-position': 'off',
       'unicode-bom': 'warn',
     },
   }
