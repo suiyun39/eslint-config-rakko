@@ -3,10 +3,6 @@ import * as importPlugin from 'eslint-plugin-import-x'
 
 /**
  * import 相关规则
- *
- * todo: 在当前版本中, 部分规则无法在 flat config 中使用, 详见: https://github.com/import-js/eslint-plugin-import/issues/2556
- * 因此被关闭的规则有: import/no-deprecated, import/namespace, import/no-named-as-default,
- * import/no-named-as-default-member, import/default
  */
 export function importsFactory(): Linter.Config {
   return {
@@ -17,12 +13,12 @@ export function importsFactory(): Linter.Config {
     rules: {
       // -------- Helpful warnings --------
       'import-x/export': 'error',
-      'import-x/no-deprecated': 'off',
+      'import-x/no-deprecated': 'warn',
       'import-x/no-empty-named-blocks': 'warn',
       'import-x/no-extraneous-dependencies': 'off',
       'import-x/no-mutable-exports': 'error',
-      'import-x/no-named-as-default': 'off',
-      'import-x/no-named-as-default-member': 'off',
+      'import-x/no-named-as-default': 'warn',
+      'import-x/no-named-as-default-member': 'warn',
       'import-x/no-unused-modules': 'off',
 
       // -------- Module systems --------
@@ -33,9 +29,9 @@ export function importsFactory(): Linter.Config {
       'import-x/unambiguous': 'off',
 
       // -------- Static analysis --------
-      'import-x/default': 'off',
+      'import-x/default': 'error',
       'import-x/named': 'error',
-      'import-x/namespace': 'off',
+      'import-x/namespace': 'error',
       'import-x/no-absolute-path': 'warn',
       'import-x/no-cycle': 'warn',
       'import-x/no-dynamic-require': 'warn',
