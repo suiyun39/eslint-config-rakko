@@ -46,7 +46,6 @@ export function stylisticFactory(): Linter.Config {
       '@stylistic/jsx-equals-spacing': 'error',
       '@stylistic/jsx-first-prop-new-line': ['error', 'multiline-multiprop'],
       '@stylistic/jsx-function-call-newline': ['error', 'multiline'],
-      '@stylistic/jsx-indent': ['error', 2],
       '@stylistic/jsx-indent-props': ['error', 2],
       '@stylistic/jsx-max-props-per-line': ['error', { maximum: 1, when: 'multiline' }],
       '@stylistic/jsx-newline': 'off',
