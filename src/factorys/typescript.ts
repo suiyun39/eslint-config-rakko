@@ -4,10 +4,12 @@ import tsESLint from 'typescript-eslint'
 
 export interface TypescriptOptions {
   project?: string | string[]
+
+  projectService?: boolean
 }
 
 export async function typescriptFactory(options: TypescriptOptions): Promise<Linter.Config[]> {
-  const { project } = options
+  const { project, projectService } = options
 
   const config = composer({
     name: 'typescript',
@@ -122,7 +124,7 @@ export async function typescriptFactory(options: TypescriptOptions): Promise<Lin
   })
 
   // 需要类型信息的规则
-  if (project) {
+  if (project || projectService) {
     await config.append({
       name: 'typescript-type-aware',
       files: ['**/*.ts', '**/*.tsx'],
@@ -130,6 +132,7 @@ export async function typescriptFactory(options: TypescriptOptions): Promise<Lin
         parser: tsESLint.parser as Linter.Parser,
         parserOptions: {
           project: project,
+          projectService: projectService,
           tsconfigRootDir: process.cwd(),
         },
       },

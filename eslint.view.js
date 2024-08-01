@@ -7,7 +7,7 @@ const { defineConfig } = require('./src/index.ts')
 
 export default defineConfig({
   typescript: {
-    project: './tsconfig.json',
+    projectService: true,
   },
   solid: true,
   react: true,
