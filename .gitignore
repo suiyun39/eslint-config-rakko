@@ -1,3 +1,5 @@
+dist-inspect
+
 # IntelliJ project files
 .idea
 *.iml
