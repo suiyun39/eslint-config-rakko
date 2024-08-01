@@ -29,30 +29,30 @@
   ],
   "devDependencies": {
     "@types/eslint": "^8.56.11",
-    "@types/node": "^20.14.11",
+    "@types/node": "^20.14.13",
     "eslint": "^8.57.0",
     "eslint-flat-config-viewer": "^0.1.20",
-    "husky": "^9.1.1",
+    "husky": "^9.1.4",
     "lint-staged": "^15.2.7",
     "sucrase": "^3.35.0",
-    "tsup": "^8.2.2",
+    "tsup": "^8.2.3",
     "typescript": "^5.5.4"
   },
   "peerDependencies": {
     "eslint": "^8.57.0"
   },
   "dependencies": {
-    "@stylistic/eslint-plugin": "^2.3.0",
-    "eslint-flat-config-utils": "^0.2.5",
+    "@stylistic/eslint-plugin": "^2.6.0",
+    "eslint-flat-config-utils": "^0.3.0",
     "eslint-plugin-import-x": "^3.1.0",
-    "eslint-plugin-n": "17.9.0",
+    "eslint-plugin-n": "17.10.1",
     "eslint-plugin-react": "^7.35.0",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.9",
     "eslint-plugin-solid": "^0.14.1",
     "eslint-plugin-unicorn": "^54.0.0",
     "globals": "^15.8.0",
-    "typescript-eslint": "^7.17.0"
+    "typescript-eslint": "^7.18.0"
   },
   "lint-staged": {
     "*": "eslint --fix"
