@@ -11,7 +11,7 @@
   "type": "module",
   "packageManager": "pnpm@9.6.0",
   "scripts": {
-    "start": "node ./scripts/view-config.js",
+    "start": "eslint-config-inspector --config ./eslint.inspect.js --open false",
     "build": "tsc && tsup",
     "lint": "eslint .",
     "prepare": "husky"
@@ -28,10 +28,10 @@
     "dist"
   ],
   "devDependencies": {
+    "@eslint/config-inspector": "^0.5.2",
     "@types/eslint": "^9.6.0",
     "@types/node": "^22.0.2",
     "eslint": "^9.8.0",
-    "eslint-flat-config-viewer": "^0.1.20",
     "husky": "^9.1.4",
     "lint-staged": "^15.2.7",
     "sucrase": "^3.35.0",
