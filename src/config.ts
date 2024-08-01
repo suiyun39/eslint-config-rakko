@@ -34,7 +34,7 @@ export interface UserOptions {
   unicorn?: boolean
 }
 
-export async function defineConfig(options: UserOptions): Promise<Linter.FlatConfig[]> {
+export async function defineConfig(options: UserOptions): Promise<Linter.Config[]> {
   const { ignores, overrides, typescript, node, react, solid, unicorn } = options
 
   // -------- 基础配置 --------
