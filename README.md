@@ -24,18 +24,18 @@ export default defineConfig({
 
 ## 规则集
 
-| 名称                    | 状态  | 启用方法                    |
-|-----------------------|-----|-------------------------|
-| imports               | 实验中 | 默认启用                    |
-| javascript            | 稳定  | 默认启用                    |
-| stylistic             | 稳定  | 默认启用                    |
-| typescript            | 实验中 | 配置 `typescript: true`   |
-| typescript-type-aware | 实验中 | 配置 `typescript.project` |
-| node                  | 实验中 | 配置 `node: true`         |
-| react                 | 实验中 | 配置 `react: true`        |
-| react-extra           | 稳定  | 配置 `react: true`        |
-| solid                 | 实验中 | 配置 `solid: true`        |
-| unicorn               | 实验中 | 配置 `unicorn: true`      |
+| 名称                    | 状态  | 启用方法                           |
+|-----------------------|-----|--------------------------------|
+| imports               | 实验中 | 默认启用                           |
+| javascript            | 稳定  | 默认启用                           |
+| stylistic             | 稳定  | 默认启用                           |
+| typescript            | 实验中 | 配置 `typescript: true`          |
+| typescript-type-aware | 实验中 | 配置 `typescript.projectService` |
+| node                  | 实验中 | 配置 `node: true`                |
+| react                 | 实验中 | 配置 `react: true`               |
+| react-extra           | 稳定  | 配置 `react: true`               |
+| solid                 | 实验中 | 配置 `solid: true`               |
+| unicorn               | 实验中 | 配置 `unicorn: true`             |
 
 ## 覆盖配置
 
