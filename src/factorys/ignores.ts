@@ -1,7 +1,7 @@
 import type { Linter } from 'eslint'
 
 export interface IgnoresOptions {
-  ignores: Linter.FlatConfig['ignores']
+  ignores: Linter.Config['ignores']
 }
 
 /**
@@ -9,7 +9,7 @@ export interface IgnoresOptions {
  *
  * 请勿向此规则集中添加 name, 存在除 ignores 之外的其他属性会导致目录匹配失效
  */
-export function ignoresFactory(options: IgnoresOptions): Linter.FlatConfig {
+export function ignoresFactory(options: IgnoresOptions): Linter.Config {
   const { ignores = [] } = options
 
   return {

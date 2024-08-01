@@ -4,7 +4,7 @@ import stylisticPlugin from '@stylistic/eslint-plugin'
 /**
  * 代码风格规则
  */
-export function stylisticFactory(): Linter.FlatConfig {
+export function stylisticFactory(): Linter.Config {
   return {
     name: 'stylistic',
     plugins: {

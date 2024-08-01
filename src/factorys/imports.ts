@@ -8,7 +8,7 @@ import * as importPlugin from 'eslint-plugin-import-x'
  * 因此被关闭的规则有: import/no-deprecated, import/namespace, import/no-named-as-default,
  * import/no-named-as-default-member, import/default
  */
-export function importsFactory(): Linter.FlatConfig {
+export function importsFactory(): Linter.Config {
   return {
     name: 'imports',
     plugins: {

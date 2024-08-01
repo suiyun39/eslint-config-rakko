@@ -9,7 +9,7 @@ import * as reactRefreshPlugin from 'eslint-plugin-react-refresh'
  * 与 prop-types 相关的规则都应被关闭, 由 TypeScript 类型检查代替
  * 与 @stylistic/jsx 重复的样式规则都应被关闭, 以避免重复检查
  */
-export async function reactFactory(): Promise<Linter.FlatConfig[]> {
+export async function reactFactory(): Promise<Linter.Config[]> {
   const config = composer({
     name: 'react',
     files: ['**/*.jsx', '**/*.tsx'],

@@ -1,7 +1,7 @@
 import type { Linter } from 'eslint'
 import nodePlugin from 'eslint-plugin-n'
 
-export function nodeFactory(): Linter.FlatConfig {
+export function nodeFactory(): Linter.Config {
   return {
     name: 'node',
     plugins: {

@@ -6,14 +6,14 @@ export interface TypescriptOptions {
   project?: string | string[]
 }
 
-export async function typescriptFactory(options: TypescriptOptions): Promise<Linter.FlatConfig[]> {
+export async function typescriptFactory(options: TypescriptOptions): Promise<Linter.Config[]> {
   const { project } = options
 
   const config = composer({
     name: 'typescript',
     files: ['**/*.ts', '**/*.tsx'],
     languageOptions: {
-      parser: tsESLint.parser as Linter.ParserModule,
+      parser: tsESLint.parser as Linter.Parser,
     },
     plugins: {
       '@typescript-eslint': tsESLint.plugin as ESLint.Plugin,
@@ -128,7 +128,7 @@ export async function typescriptFactory(options: TypescriptOptions): Promise<Lin
       name: 'typescript-type-aware',
       files: ['**/*.ts', '**/*.tsx'],
       languageOptions: {
-        parser: tsESLint.parser as Linter.ParserModule,
+        parser: tsESLint.parser as Linter.Parser,
         parserOptions: {
           project: project,
           tsconfigRootDir: process.cwd(),
