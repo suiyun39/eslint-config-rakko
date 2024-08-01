@@ -71,6 +71,7 @@ export async function reactFactory(): Promise<Linter.Config[]> {
       'react/jsx-one-expression-per-line': 'off',
       'react/jsx-pascal-case': 'off',
       'react/jsx-props-no-multi-spaces': 'off',
+      'react/jsx-props-no-spread-multi': 'warn',
       'react/jsx-props-no-spreading': 'off',
       'react/jsx-sort-props': 'off',
       'react/jsx-tag-spacing': 'off',

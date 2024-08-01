@@ -80,6 +80,7 @@ export function javascriptFactory(): Linter.Config {
       'no-unused-private-class-members': 'warn',
       'no-unused-vars': 'error',
       'no-use-before-define': 'warn',
+      'no-useless-assignment': 'warn',
       'no-useless-backreference': 'error',
       'require-atomic-updates': 'warn',
       'use-isnan': 'error',
