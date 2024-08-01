@@ -24,8 +24,8 @@ importers:
         specifier: ^7.35.0
         version: 7.35.0(eslint@9.8.0)
       eslint-plugin-react-hooks:
-        specifier: ^4.6.2
-        version: 4.6.2(eslint@9.8.0)
+        specifier: 5.1.0-rc-a7d1240c-20240731
+        version: 5.1.0-rc-a7d1240c-20240731(eslint@9.8.0)
       eslint-plugin-react-refresh:
         specifier: ^0.4.9
         version: 0.4.9(eslint@9.8.0)
@@ -975,11 +975,11 @@ packages:
     peerDependencies:
       eslint: '>=8.23.0'
 
-  eslint-plugin-react-hooks@4.6.2:
-    resolution: {integrity: sha512-QzliNJq4GinDBcD8gPB5v0wh6g8q3SUi6EFF0x8N/BL9PoVs0atuGc47ozMRyOWAKdwaZ5OnbOEa3WR+dSGKuQ==}
+  eslint-plugin-react-hooks@5.1.0-rc-a7d1240c-20240731:
+    resolution: {integrity: sha512-skieFNcqlem7PX9HqDVZo8OUnWYRdJvEpC6Z9AFRSJri6jVsIcoKurQqHAkS9XCgrQQCjQ2lgtXMEl6aufJAPA==}
     engines: {node: '>=10'}
     peerDependencies:
-      eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0
+      eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0 || ^9.0.0
 
   eslint-plugin-react-refresh@0.4.9:
     resolution: {integrity: sha512-QK49YrBAo5CLNLseZ7sZgvgTy21E6NEw22eZqc4teZfH8pxV3yXc9XXOYfUI6JNpw7mfHNkAeWtBxrTyykB6HA==}
@@ -3230,7 +3230,7 @@ snapshots:
       minimatch: 9.0.5
       semver: 7.6.2
 
-  eslint-plugin-react-hooks@4.6.2(eslint@9.8.0):
+  eslint-plugin-react-hooks@5.1.0-rc-a7d1240c-20240731(eslint@9.8.0):
     dependencies:
       eslint: 9.8.0
 
