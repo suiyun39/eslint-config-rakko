@@ -29,8 +29,8 @@
   ],
   "devDependencies": {
     "@types/eslint": "^9.6.0",
-    "@types/node": "^20.14.13",
-    "eslint": "^8.57.0",
+    "@types/node": "^22.0.2",
+    "eslint": "^9.8.0",
     "eslint-flat-config-viewer": "^0.1.20",
     "husky": "^9.1.4",
     "lint-staged": "^15.2.7",
@@ -39,7 +39,7 @@
     "typescript": "^5.5.4"
   },
   "peerDependencies": {
-    "eslint": "^8.57.0"
+    "eslint": "^9.8.0"
   },
   "dependencies": {
     "@stylistic/eslint-plugin": "^2.6.0",
