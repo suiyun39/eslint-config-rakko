@@ -50,7 +50,6 @@ export async function typescriptFactory(options: TypescriptOptions): Promise<Lin
       '@typescript-eslint/array-type': ['warn', { default: 'array-simple', readonly: 'array-simple' }],
       '@typescript-eslint/ban-ts-comment': 'error',
       '@typescript-eslint/ban-tslint-comment': 'warn',
-      '@typescript-eslint/ban-types': 'error',
       '@typescript-eslint/class-literal-property-style': 'warn',
       '@typescript-eslint/class-methods-use-this': 'off',
       '@typescript-eslint/consistent-generic-constructors': 'warn',
