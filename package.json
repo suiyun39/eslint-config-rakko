@@ -28,7 +28,7 @@
     "dist"
   ],
   "devDependencies": {
-    "@types/eslint": "^8.56.11",
+    "@types/eslint": "^9.6.0",
     "@types/node": "^20.14.13",
     "eslint": "^8.57.0",
     "eslint-flat-config-viewer": "^0.1.20",
