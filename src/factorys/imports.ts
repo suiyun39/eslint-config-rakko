@@ -16,7 +16,7 @@ export function importsFactory(options: ImportsOptions): Linter.Config {
     rules: {
       // -------- Helpful warnings --------
       'import-x/export': 'error',
-      'import-x/no-deprecated': 'warn',
+      'import-x/no-deprecated': 'off',
       'import-x/no-empty-named-blocks': 'warn',
       'import-x/no-extraneous-dependencies': 'off',
       'import-x/no-mutable-exports': 'error',
@@ -34,10 +34,10 @@ export function importsFactory(options: ImportsOptions): Linter.Config {
 
       // -------- Static analysis --------
       'import-x/default': 'error',
-      'import-x/named': 'error',
-      'import-x/namespace': 'error',
+      'import-x/named': 'off',
+      'import-x/namespace': 'off',
       'import-x/no-absolute-path': 'warn',
-      'import-x/no-cycle': 'warn',
+      'import-x/no-cycle': 'off',
       'import-x/no-dynamic-require': 'warn',
       'import-x/no-internal-modules': 'off',
       'import-x/no-relative-packages': 'error',
