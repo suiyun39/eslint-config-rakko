@@ -129,7 +129,7 @@ export function javascriptFactory(): Linter.Config {
       'no-continue': 'off',
       'no-delete-var': 'error',
       'no-div-regex': 'warn',
-      'no-else-return': 'warn',
+      'no-else-return': 'off',
       'no-empty': 'error',
       'no-empty-function': 'warn',
       'no-empty-static-block': 'warn',
