@@ -87,7 +87,7 @@ export async function typescriptFactory(options: TypescriptOptions): Promise<Lin
       '@typescript-eslint/no-extra-non-null-assertion': 'error',
       '@typescript-eslint/no-extraneous-class': 'off',
       '@typescript-eslint/no-import-type-side-effects': 'warn',
-      '@typescript-eslint/no-inferrable-types': 'warn',
+      '@typescript-eslint/no-inferrable-types': 'off',
       '@typescript-eslint/no-invalid-this': 'off',
       '@typescript-eslint/no-invalid-void-type': 'warn',
       '@typescript-eslint/no-loop-func': 'warn',
