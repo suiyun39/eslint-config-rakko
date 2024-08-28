@@ -62,7 +62,7 @@ export function stylisticFactory(): Linter.Config {
       '@stylistic/keyword-spacing': 'error',
       '@stylistic/line-comment-position': 'off',
       '@stylistic/linebreak-style': ['error', 'unix'],
-      '@stylistic/lines-around-comment': 'error',
+      '@stylistic/lines-around-comment': ['error', { allowBlockStart: true }],
       '@stylistic/lines-between-class-members': ['error', 'always', {
         exceptAfterSingleLine: true,
       }],
