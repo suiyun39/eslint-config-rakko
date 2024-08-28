@@ -57,5 +57,12 @@
   },
   "lint-staged": {
     "*": "eslint --fix"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "allowedVersions": {
+        "eslint": "9"
+      }
+    }
   }
 }
