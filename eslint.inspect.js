@@ -1,3 +1,4 @@
+/* eslint-disable import-x/no-commonjs */
 import { createRequire } from 'node:module'
 
 const require = createRequire(import.meta.url)
