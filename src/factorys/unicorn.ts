@@ -21,7 +21,7 @@ export function unicornFactory(options: UnicornOptions): Linter.Config {
       }],
       'unicorn/consistent-destructuring': 'off',
       'unicorn/consistent-empty-array-spread': 'error',
-      'unicorn/consistent-function-scoping': 'error',
+      'unicorn/consistent-function-scoping': 'off',
       'unicorn/custom-error-definition': 'warn',
       'unicorn/empty-brace-spaces': 'error',
       'unicorn/error-message': 'error',
