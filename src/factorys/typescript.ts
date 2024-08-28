@@ -6,16 +6,19 @@ export interface TypescriptOptions {
   project?: string | string[]
 
   projectService?: boolean
+
+  parserOptions?: Linter.ParserOptions
 }
 
 export async function typescriptFactory(options: TypescriptOptions): Promise<Linter.Config[]> {
-  const { project, projectService } = options
+  const { project, projectService, parserOptions } = options
 
   const config = composer({
     name: 'typescript',
     files: ['**/*.ts', '**/*.tsx'],
     languageOptions: {
       parser: tsESLint.parser as Linter.Parser,
+      parserOptions: parserOptions,
     },
     plugins: {
       '@typescript-eslint': tsESLint.plugin as ESLint.Plugin,
