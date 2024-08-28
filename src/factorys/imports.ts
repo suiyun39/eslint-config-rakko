@@ -19,6 +19,7 @@ export function importsFactory(): Linter.Config {
       'import-x/no-mutable-exports': 'error',
       'import-x/no-named-as-default': 'warn',
       'import-x/no-named-as-default-member': 'warn',
+      'import-x/no-rename-default': 'off',
       'import-x/no-unused-modules': 'off',
 
       // -------- Module systems --------

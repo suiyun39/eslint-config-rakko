@@ -152,6 +152,7 @@ export async function typescriptFactory(options: TypescriptOptions): Promise<Lin
           ignoreArrowShorthand: true,
           ignoreVoidOperator: true,
         }],
+        '@typescript-eslint/no-deprecated': 'off',
         '@typescript-eslint/no-duplicate-type-constituents': 'error',
         '@typescript-eslint/no-floating-promises': 'error',
         '@typescript-eslint/no-for-in-array': 'error',
