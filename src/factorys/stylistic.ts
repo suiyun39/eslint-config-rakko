@@ -78,7 +78,7 @@ export function stylisticFactory(): Linter.Config {
       '@stylistic/new-parens': 'error',
       '@stylistic/newline-per-chained-call': ['error', { ignoreChainWithDepth: 6 }],
       '@stylistic/no-confusing-arrow': 'off',
-      '@stylistic/no-extra-parens': 'error',
+      '@stylistic/no-extra-parens': ['error', 'all', { ignoreJSX: 'multi-line' }],
       '@stylistic/no-extra-semi': 'error',
       '@stylistic/no-floating-decimal': 'error',
       '@stylistic/no-mixed-operators': 'error',
