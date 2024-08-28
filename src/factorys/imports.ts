@@ -1,10 +1,13 @@
 import type { Linter } from 'eslint'
 import * as importPlugin from 'eslint-plugin-import-x'
 
-/**
- * import 相关规则
- */
-export function importsFactory(): Linter.Config {
+export interface ImportsOptions {
+  commonjs: boolean
+}
+
+export function importsFactory(options: ImportsOptions): Linter.Config {
+  const { commonjs } = options
+
   return {
     name: 'imports',
     plugins: {
@@ -24,7 +27,7 @@ export function importsFactory(): Linter.Config {
 
       // -------- Module systems --------
       'import-x/no-amd': 'error',
-      'import-x/no-commonjs': 'off',
+      'import-x/no-commonjs': commonjs ? 'off' : 'error',
       'import-x/no-import-module-exports': 'warn',
       'import-x/no-nodejs-modules': 'off',
       'import-x/unambiguous': 'off',

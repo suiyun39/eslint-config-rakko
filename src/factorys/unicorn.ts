@@ -1,7 +1,13 @@
 import type { Linter } from 'eslint'
 import unicornPlugin from 'eslint-plugin-unicorn'
 
-export function unicornFactory(): Linter.Config {
+export interface UnicornOptions {
+  commonjs: boolean
+}
+
+export function unicornFactory(options: UnicornOptions): Linter.Config {
+  const { commonjs } = options
+
   return {
     name: 'unicorn',
     plugins: {
@@ -119,7 +125,7 @@ export function unicornFactory(): Linter.Config {
       'unicorn/prefer-structured-clone': 'error',
       'unicorn/prefer-switch': 'off',
       'unicorn/prefer-ternary': 'error',
-      'unicorn/prefer-top-level-await': 'error',
+      'unicorn/prefer-top-level-await': commonjs ? 'off' : 'error',
       'unicorn/prefer-type-error': 'error',
       'unicorn/prevent-abbreviations': 'off',
       'unicorn/relative-url-style': ['error', 'always'],

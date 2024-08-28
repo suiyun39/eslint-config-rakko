@@ -18,6 +18,9 @@ export interface UserOptions {
   // 配置覆盖
   overrides?: Parameters<FlatConfigComposer['overrides']>[0]
 
+  // 启用 CommonJS 模块模式
+  commonjs?: boolean
+
   // 启用 TypeScript 规则集
   typescript?: boolean | TypescriptOptions
 
@@ -35,12 +38,21 @@ export interface UserOptions {
 }
 
 export async function defineConfig(options: UserOptions): Promise<Linter.Config[]> {
-  const { ignores, overrides, typescript, node, react, solid, unicorn } = options
+  const {
+    ignores,
+    overrides,
+    commonjs = false,
+    typescript,
+    node,
+    react,
+    solid,
+    unicorn,
+  } = options
 
   // -------- 基础配置 --------
   const config = composer(
     ignoresFactory({ ignores }),
-    importsFactory(),
+    importsFactory({ commonjs }),
     javascriptFactory(),
     stylisticFactory(),
   )
@@ -64,7 +76,7 @@ export async function defineConfig(options: UserOptions): Promise<Linter.Config[
   }
 
   if (unicorn) {
-    await config.append(unicornFactory())
+    await config.append(unicornFactory({ commonjs }))
   }
 
   // -------- 配置覆盖 --------
