@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-rakko",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "自用 ESLint 规则集",
   "repository": "github:suiyun39/eslint-config-rakko",
   "license": "MIT",
