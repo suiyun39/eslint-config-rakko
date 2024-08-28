@@ -83,7 +83,7 @@ export async function typescriptFactory(options: TypescriptOptions): Promise<Lin
       '@typescript-eslint/no-dynamic-delete': 'off',
       '@typescript-eslint/no-empty-function': 'warn',
       '@typescript-eslint/no-empty-object-type': 'error',
-      '@typescript-eslint/no-explicit-any': 'error',
+      '@typescript-eslint/no-explicit-any': 'off',
       '@typescript-eslint/no-extra-non-null-assertion': 'error',
       '@typescript-eslint/no-extraneous-class': 'off',
       '@typescript-eslint/no-import-type-side-effects': 'warn',
