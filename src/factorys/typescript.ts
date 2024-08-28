@@ -67,7 +67,7 @@ export async function typescriptFactory(options: TypescriptOptions): Promise<Lin
       }],
       '@typescript-eslint/default-param-last': 'warn',
       '@typescript-eslint/explicit-function-return-type': 'off',
-      '@typescript-eslint/explicit-member-accessibility': 'warn',
+      '@typescript-eslint/explicit-member-accessibility': ['warn', { accessibility: 'no-public' }],
       '@typescript-eslint/explicit-module-boundary-types': 'off',
       '@typescript-eslint/init-declarations': 'warn',
       '@typescript-eslint/max-params': 'off',
