@@ -19,7 +19,7 @@ export function unicornFactory(options: UnicornOptions): Linter.Config {
         name: 'error',
         ignore: ['^err$'],
       }],
-      'unicorn/consistent-destructuring': 'warn',
+      'unicorn/consistent-destructuring': 'off',
       'unicorn/consistent-empty-array-spread': 'error',
       'unicorn/consistent-function-scoping': 'error',
       'unicorn/custom-error-definition': 'warn',
