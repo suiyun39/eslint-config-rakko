@@ -108,7 +108,7 @@ export async function typescriptFactory(options: TypescriptOptions): Promise<Lin
       '@typescript-eslint/no-unsafe-declaration-merging': 'error',
       '@typescript-eslint/no-unsafe-function-type': 'error',
       '@typescript-eslint/no-unused-expressions': 'warn',
-      '@typescript-eslint/no-unused-vars': 'error',
+      '@typescript-eslint/no-unused-vars': 'warn',
       '@typescript-eslint/no-use-before-define': 'warn',
       '@typescript-eslint/no-useless-constructor': 'warn',
       '@typescript-eslint/no-useless-empty-export': 'warn',
