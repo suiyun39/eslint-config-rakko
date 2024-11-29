@@ -46,7 +46,7 @@ export async function defineConfig(options: UserOptions): Promise<Linter.Config[
     node,
     react,
     solid,
-    unicorn,
+    unicorn = true,
   } = options
 
   // -------- 基础配置 --------
