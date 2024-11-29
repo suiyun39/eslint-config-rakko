@@ -33,6 +33,7 @@ export async function reactFactory(): Promise<Linter.Config[]> {
       'react/forbid-elements': 'off',
       'react/forbid-foreign-prop-types': 'off',
       'react/forbid-prop-types': 'off',
+      'react/forward-ref-uses-ref': 'warn',
       'react/function-component-definition': 'off',
       'react/hook-use-state': 'warn',
       'react/iframe-missing-sandbox': 'warn',

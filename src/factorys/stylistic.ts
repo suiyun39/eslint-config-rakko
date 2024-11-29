@@ -22,6 +22,7 @@ export function stylisticFactory(): Linter.Config {
       '@stylistic/comma-spacing': ['error', { before: false, after: true }],
       '@stylistic/comma-style': 'error',
       '@stylistic/computed-property-spacing': 'error',
+      '@stylistic/curly-newline': ['error', { consistent: true }],
       '@stylistic/dot-location': ['error', 'property'],
       '@stylistic/eol-last': 'error',
       '@stylistic/func-call-spacing': 'error',
