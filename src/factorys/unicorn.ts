@@ -62,7 +62,7 @@ export function unicornFactory(options: UnicornOptions): Linter.Config {
       'unicorn/no-object-as-default-parameter': 'error',
       'unicorn/no-process-exit': 'off',
       'unicorn/no-single-promise-in-promise-methods': 'error',
-      'unicorn/no-static-only-class': 'error',
+      'unicorn/no-static-only-class': 'off',
       'unicorn/no-thenable': 'error',
       'unicorn/no-this-assignment': 'error',
       'unicorn/no-typeof-undefined': 'error',

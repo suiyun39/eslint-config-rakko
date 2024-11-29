@@ -96,7 +96,7 @@ export async function typescriptFactory(options: TypescriptOptions): Promise<Lin
       '@typescript-eslint/no-namespace': 'error',
       '@typescript-eslint/no-non-null-asserted-nullish-coalescing': 'warn',
       '@typescript-eslint/no-non-null-asserted-optional-chain': 'error',
-      '@typescript-eslint/no-non-null-assertion': 'warn',
+      '@typescript-eslint/no-non-null-assertion': 'off',
       '@typescript-eslint/no-redeclare': 'off',
       '@typescript-eslint/no-require-imports': 'warn',
       '@typescript-eslint/no-restricted-imports': 'off',
