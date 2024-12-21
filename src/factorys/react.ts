@@ -59,7 +59,7 @@ export async function reactFactory(): Promise<Linter.Config[]> {
       'react/jsx-max-depth': 'off',
       'react/jsx-max-props-per-line': 'off',
       'react/jsx-newline': 'off',
-      'react/jsx-no-bind': ['warn', { allowArrowFunctions: true }],
+      'react/jsx-no-bind': ['warn', { allowArrowFunctions: true, allowFunctions: false }],
       'react/jsx-no-comment-textnodes': 'error',
       'react/jsx-no-constructed-context-values': 'warn',
       'react/jsx-no-duplicate-props': 'error',

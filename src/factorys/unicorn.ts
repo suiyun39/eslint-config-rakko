@@ -79,7 +79,7 @@ export function unicornFactory(options: UnicornOptions): Linter.Config {
       'unicorn/no-useless-undefined': 'off',
       'unicorn/no-zero-fractions': 'off',
       'unicorn/number-literal-case': 'error',
-      'unicorn/numeric-separators-style': 'error',
+      'unicorn/numeric-separators-style': 'off',
       'unicorn/prefer-add-event-listener': 'error',
       'unicorn/prefer-array-find': 'error',
       'unicorn/prefer-array-flat': 'error',
