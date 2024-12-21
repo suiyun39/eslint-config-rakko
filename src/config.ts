@@ -15,6 +15,9 @@ export interface UserOptions {
   // 文件忽略配置
   ignores?: IgnoresOptions['ignores']
 
+  // 全局变量配置
+  globals?: Linter.Globals
+
   // 配置覆盖
   overrides?: Parameters<FlatConfigComposer['overrides']>[0]
 
@@ -40,6 +43,7 @@ export interface UserOptions {
 export async function defineConfig(options: UserOptions): Promise<Linter.Config[]> {
   const {
     ignores,
+    globals,
     overrides,
     commonjs = false,
     typescript,
@@ -53,7 +57,7 @@ export async function defineConfig(options: UserOptions): Promise<Linter.Config[
   const config = composer(
     ignoresFactory({ ignores }),
     importsFactory({ commonjs }),
-    javascriptFactory(),
+    javascriptFactory({ globals }),
     stylisticFactory(),
   )
 

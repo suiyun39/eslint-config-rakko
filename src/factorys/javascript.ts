@@ -1,11 +1,15 @@
 import type { Linter } from 'eslint'
 import globals from 'globals'
 
+export interface JavascriptOptions {
+  globals?: Linter.Globals
+}
+
 /**
  * 此处包含了 javascript 相关规则
  * 由于 eslint 不再维护样式类规则, 此处样式配置应使用 eslint stylistic 提供的规则
  */
-export function javascriptFactory(): Linter.Config {
+export function javascriptFactory(options: JavascriptOptions): Linter.Config {
   return {
     name: 'javascript',
     linterOptions: {
@@ -23,6 +27,7 @@ export function javascriptFactory(): Linter.Config {
         ...globals.es2024,
         ...globals.browser,
         ...globals.node,
+        ...options.globals,
       },
     },
     rules: {
