@@ -1,6 +1,3 @@
-# 执行 pnpm version 时的提交信息
-message: "chore: release %s"
-
 # 严格对等依赖
 strictPeerDependencies: true
 
