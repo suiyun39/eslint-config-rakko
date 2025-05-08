@@ -2,7 +2,7 @@ import type { Linter } from 'eslint'
 import { composer } from 'eslint-flat-config-utils'
 import reactPlugin from 'eslint-plugin-react'
 import reactHooksPlugin from 'eslint-plugin-react-hooks'
-import * as reactRefreshPlugin from 'eslint-plugin-react-refresh'
+import reactRefreshPlugin from 'eslint-plugin-react-refresh'
 
 /**
  * React 相关规则
