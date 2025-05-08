@@ -55,13 +55,6 @@
     "globals": "^16.1.0",
     "typescript-eslint": "^8.32.0"
   },
-  "pnpm": {
-    "peerDependencyRules": {
-      "allowedVersions": {
-        "typescript": "5"
-      }
-    }
-  },
   "lint-staged": {
     "*": "eslint --fix"
   }

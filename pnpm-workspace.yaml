@@ -1,0 +1,15 @@
+# 执行 pnpm version 时的提交信息
+message: "chore: release %s"
+
+# 严格对等依赖
+strictPeerDependencies: true
+
+# 对等依赖版本覆写
+peerDependencyRules:
+  allowedVersions:
+    "typescript": "5"
+
+# 允许执行 build 脚本的包
+onlyBuiltDependencies:
+  - "esbuild"
+  - "unrs-resolver"
