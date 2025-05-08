@@ -36,8 +36,8 @@ importers:
         specifier: ^59.0.1
         version: 59.0.1(eslint@9.26.0(jiti@1.21.6))
       globals:
-        specifier: ^15.15.0
-        version: 15.15.0
+        specifier: ^16.1.0
+        version: 16.1.0
       typescript-eslint:
         specifier: ^8.32.0
         version: 8.32.0(eslint@9.26.0(jiti@1.21.6))(typescript@5.8.3)
