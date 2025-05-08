@@ -9,7 +9,7 @@
     "eslint-config"
   ],
   "type": "module",
-  "packageManager": "pnpm@9.15.9",
+  "packageManager": "pnpm@10.10.0",
   "scripts": {
     "start": "eslint-config-inspector --config ./eslint.inspect.js --open false",
     "build": "tsc && tsup",
