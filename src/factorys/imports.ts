@@ -20,8 +20,8 @@ export function importsFactory(options: ImportsOptions): Linter.Config {
       'import-x/no-empty-named-blocks': 'warn',
       'import-x/no-extraneous-dependencies': 'off',
       'import-x/no-mutable-exports': 'error',
-      'import-x/no-named-as-default': 'warn',
-      'import-x/no-named-as-default-member': 'warn',
+      'import-x/no-named-as-default': 'off',
+      'import-x/no-named-as-default-member': 'off',
       'import-x/no-rename-default': 'off',
       'import-x/no-unused-modules': 'off',
 
@@ -33,7 +33,7 @@ export function importsFactory(options: ImportsOptions): Linter.Config {
       'import-x/unambiguous': 'off',
 
       // -------- Static analysis --------
-      'import-x/default': 'error',
+      'import-x/default': 'off',
       'import-x/named': 'off',
       'import-x/namespace': 'off',
       'import-x/no-absolute-path': 'warn',
